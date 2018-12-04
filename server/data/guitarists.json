@@ -1,20 +1,27 @@
 [
-    {
-        "name": "Jimi Hendrix",
-        "yob": 1942,
-        "alive": false,
-        "musicType": "rock"
-    },
-    {
-        "name": "Howlin' Wolf",
-        "yob": 1910,
-        "alive": false,
-        "musicType": "blues"
-    },
-    {
-        "name": "Tommy Iommi",
-        "yob": 1948,
-        "alive": true,
-        "musicType": "metal"
-    }
+  {
+    "name": "Jimi Hendrix",
+    "yob": 1942,
+    "alive": false,
+    "musicType": "rock"
+  },
+  {
+    "name": "Howlin' Wolf",
+    "yob": 1910,
+    "alive": false,
+    "musicType": "blues"
+  },
+  {
+    "name": "Tommy Iommi",
+    "yob": 1948,
+    "alive": true,
+    "musicType": "metal"
+  },
+  {
+    "name": "Frank Zappa",
+    "yob": 1940,
+    "alive": false,
+    "musicType": "rock",
+    "id": "50jBEz8S1"
+  }
 ]

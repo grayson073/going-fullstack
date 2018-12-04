@@ -1,4 +1,3 @@
-const imported = require('path');
 const express = require('express');
 const app = express();
 const shortid = require('shortid');
@@ -8,6 +7,11 @@ const fs = require('fs');
 function readData() {
   const data = fs.readFileSync('./data/guitarists.json', 'utf8');
   return JSON.parse(data);
+}
+
+function saveData(guitarists) {
+  const json = JSON.stringify(guitarists, true, 2);
+  fs.writeFileSync('./data/guitarists.json', json);
 }
 
 app.use(express.json());
@@ -25,6 +29,17 @@ app.get('/api/guitarists', (req, res) => {
   else {
     res.json(guitarists);
   }
+});
+
+app.post('/api/guitarists', (req, res) => {
+  const guitarists = readData();
+  const guitarist = req.body;
+
+  guitarist.id = shortid.generate();
+  guitarists.push(guitarist);
+  saveData(guitarists);
+
+  res.json(guitarist);
 });
 
 const PORT = 3000;
