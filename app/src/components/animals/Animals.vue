@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import api from '../../service/api';
+import api from '../../services/api';
 import AddAnimal from './AddAnimal';
 
 export default {
