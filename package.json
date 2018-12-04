@@ -17,5 +17,8 @@
     "url": "https://github.com/Zilula/going-fullstack/issues"
   },
   "homepage": "https://github.com/Zilula/going-fullstack#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "vue-router": "^3.0.2"
+  }
 }
