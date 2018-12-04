@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Moonlight",
+      "year": 2016,
+      "genre": "Drama"
+    },
+    {      
+        "name": "Jaws",
+        "year": 1975,
+        "genre": "Horror"
+    },
+    {
+        "name": "Pulp Fiction",
+        "year": 1994,
+        "genre": "Thriller"
+    },
+    {
+        "name": "Forrest Gump",
+        "year": 1994,
+        "genre": "Drama"
+    },
+    {
+        "name": "Forrest Gump",
+        "year": 1994,
+         "genre": "Drama"
+    }
+]
