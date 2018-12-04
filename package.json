@@ -1,9 +1,23 @@
 {
-  "name": "app-server",
+  "name": "going-fullstack",
   "version": "1.0.0",
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "dependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test:app": "cd app && npm i && npm test && cd ..",
-    "test:server": "cd server && npm i && npm test && cd ..",
-    "test": "npm run test:app && npm run test:server"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristinhortsch/going-fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristinhortsch/going-fullstack/issues"
+  },
+  "homepage": "https://github.com/kristinhortsch/going-fullstack#readme"
 }
