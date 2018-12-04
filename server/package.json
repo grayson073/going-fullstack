@@ -11,7 +11,8 @@
   "author": "Cari Palazzolo",
   "license": "ISC",
   "dependencies": {
-    "eslint": "^5.9.0"
+    "eslint": "^5.9.0",
+    "shortid": "^2.2.14"
   },
   "devDependencies": {
     "nodemon": "^1.18.7"
