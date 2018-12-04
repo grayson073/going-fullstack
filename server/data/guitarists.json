@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Jimi Hendrix",
+        "yob": 1942,
+        "alive": false,
+        "musicType": "rock"
+    },
+    {
+        "name": "Howlin' Wolf",
+        "yob": 1910,
+        "alive": false,
+        "musicType": "blues"
+    },
+    {
+        "name": "Tommy Iommi",
+        "yob": 1948,
+        "alive": true,
+        "musicType": "metal"
+    }
+]

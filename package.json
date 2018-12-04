@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "eslint": "^5.9.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.14"
   }
 }
