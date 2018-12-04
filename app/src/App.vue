@@ -3,7 +3,7 @@
     <header>
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/students">A List of Singers</RouterLink>
+        <RouterLink to="/singers">A List of Singers</RouterLink>
       </nav>
     </header>
 
