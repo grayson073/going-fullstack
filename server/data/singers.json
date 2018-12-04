@@ -1,10 +1,5 @@
-[
-    {
-      "name": "Freddy Mercury",
-      "genre": "rock"
-    },
-    {
-      "name": "Frank Sinatra",
-      "genre": "vegas"
-    }
-]
+{
+  "name": "Billy",
+  "genre": "Classical",
+  "id": "EAyUo-oJz"
+}

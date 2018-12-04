@@ -1,6 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input v-model="singer.name" require>
+    Name: <input v-model="singer.name">
+    Genre: <input v-model="singer.genre">
     <button>Add</button>
   </form>
 </template>
@@ -13,7 +14,8 @@ export default {
   data() {
     return {
       singer: {
-        name: ''
+        name: '',
+        genre: '',
       }
     };
   },
@@ -21,7 +23,11 @@ export default {
     handleSubmit() {
       this.onAdd(this.singer)
         .then(() => {
-          this.singer = { name: '' };
+          this.singer = { 
+            name: '',
+            genre: ''
+            };
+
         });
     }
   }

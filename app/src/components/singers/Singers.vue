@@ -6,7 +6,8 @@
 
     <ul v-if="singers">
       <li v-for="singer in singers" :key="singer.id">
-        {{singers.name}}
+        {{singer.name}}
+        {{singer.genre}}
       </li>
     </ul>
   </section>
