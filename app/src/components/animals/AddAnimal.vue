@@ -15,9 +15,9 @@ export default {
   data() {
     return {
       animal: {
-        name: '',
-        mammal: '',
-        weight: ''
+        name: ''
+        // mammal: '',
+        // weight: ''
       }
     };
   },
@@ -26,9 +26,9 @@ export default {
       this.onAdd(this.animal)
         .then(() => {
           this.animal = { 
-            name: '',
-            mammal: '',
-            weight: ''
+            name: ''
+            // mammal: '',
+            // weight: ''
           };
         });
     }

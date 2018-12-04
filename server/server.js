@@ -5,7 +5,7 @@ const shortid = require('shortid');
 const fs = require('fs');
 
 function readData() {
-  const data = fs.readFileSync('./data/animals.json');
+  const data = fs.readFileSync('./data/animals.json', 'utf8');
   return JSON.parse(data);
 }
 
@@ -18,8 +18,17 @@ app.use(express.json());
 
 app.get('/api/animals', (req, res) => {
   const animals = readData();
+  if(req.query.name) {
+    const match = req.query.name.toLowerCase();
+    const filtered = animals.filter(s => {
+      return s.name.toLowerCase().startsWith(match);
+    });
+    res.json(filtered);
+  }
+  else {
+    res.json(animals);
+  }
 
-  res.json(animals);
 });
 
 app.post('/api/animals', (req, res) => {
