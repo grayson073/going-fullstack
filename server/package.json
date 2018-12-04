@@ -1,0 +1,29 @@
+{
+  "name": "app-server",
+  "version": "1.0.0",
+  "scripts": {
+    "test:app": "cd app && npm i && npm test && cd ..",
+    "test:server": "cd server && npm i && npm test && cd ..",
+    "test": "npm run test:app && npm run test:server"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaba9/going-fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaba9/going-fullstack/issues"
+  },
+  "homepage": "https://github.com/Shaba9/going-fullstack#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.4",
+    "shortid": "^2.2.14"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.7"
+  }
+}
