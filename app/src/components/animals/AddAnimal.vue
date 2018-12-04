@@ -20,22 +20,14 @@ export default {
   },
   data() {
     return {
-      animal: {
-        name: ''
-        // mammal: '',
-        // weight: ''
-      }
+      animal: {}
     };
   },
   methods: {
     handleSubmit() {
       this.onAdd(this.animal)
         .then(() => {
-          this.animal = { 
-            name: ''
-            // mammal: '',
-            // weight: ''
-          };
+          this.animal = {};
         });
     }
   }

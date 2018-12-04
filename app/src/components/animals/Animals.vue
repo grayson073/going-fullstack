@@ -6,7 +6,11 @@
 
     <ul v-if="animals">
       <li v-for="animal in animals" :key="animal.id">
-        {{animal.name}}
+        <h3>{{animal.name}}</h3>
+        <div>
+          <p>Mammal: {{animal.mammal}}</p>
+          <p>Weight: {{animal.weight}} pounds</p>
+        </div>
       </li>
     </ul>
   </section> 
@@ -41,3 +45,15 @@ export default {
   }
 };
 </script>
+
+<style>
+  li {
+    list-style-type: none;
+    border: 2px solid black;
+    margin-bottom: 5px;
+  }
+  h3 {
+    text-align: center;
+  }
+
+</style>
