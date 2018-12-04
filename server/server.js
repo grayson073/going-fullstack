@@ -11,7 +11,7 @@ function readData() {
 
 function saveData(animals) {
   const json = JSON.stringify(animals, true, 2);
-  fs.writeFileSync('./data/animals.json', json)
+  fs.writeFileSync('./data/animals.json', json);
 }
 
 app.use(express.json());
@@ -26,5 +26,15 @@ app.post('/api/animals', (req, res) => {
 
   const animals = readData();
   const animal = req.body;
-  animal.id = shortid.generate(); 
-}
+  animal.id = shortid.generate();
+  animals.push(animal);
+  saveData(animals);
+  
+  res.json(animal);
+});
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log('server app was started on port', PORT);
+});
