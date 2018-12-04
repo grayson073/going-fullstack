@@ -3,6 +3,11 @@
     "name": "cheetah",
     "mammal": true,
     "weight": 110
-
+  },
+  {
+    "name": "bear",
+    "mammal": true,
+    "weight": 510,
+    "id": "UktBJwP2_"
   }
 ]
