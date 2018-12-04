@@ -9,6 +9,9 @@
     <label>Weight
       <input v-model="animal.weight" require>
     </label>
+    <label>Image
+      <input v-model="animal.image">
+    </label>
     <button>Add</button>
   </form>
 </template>

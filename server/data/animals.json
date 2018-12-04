@@ -58,5 +58,12 @@
     "mammal": "fkdslaf",
     "weight": "111",
     "id": "sI4lIfLJm"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Siberischer_tiger_de_edit02.jpg",
+    "name": "TIGER",
+    "mammal": "TRUE",
+    "weight": "500",
+    "id": "xqgoZbaL3"
   }
 ]

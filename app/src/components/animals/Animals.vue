@@ -8,6 +8,7 @@
       <li v-for="animal in animals" :key="animal.id">
         <h3>{{animal.name}}</h3>
         <div>
+          <img v-bind:src="animal.image">
           <p>Mammal: {{animal.mammal}}</p>
           <p>Weight: {{animal.weight}} pounds</p>
         </div>
@@ -51,6 +52,7 @@ export default {
     list-style-type: none;
     border: 2px solid black;
     margin-bottom: 5px;
+    width: 200px;
   }
   h3 {
     text-align: center;
