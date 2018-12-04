@@ -5,5 +5,24 @@
     "test:app": "cd app && npm i && npm test && cd ..",
     "test:server": "cd server && npm i && npm test && cd ..",
     "test": "npm run test:app && npm run test:server"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PDXCrow/going-fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PDXCrow/going-fullstack/issues"
+  },
+  "homepage": "https://github.com/PDXCrow/going-fullstack#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
