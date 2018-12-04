@@ -6,10 +6,10 @@
 
     <ul v-if="animals">
       <li v-for="animal in animals" :key="animal.id">
-        {{animal.anme}}
+        {{animal.name}}
       </li>
     </ul>
-  </section>
+  </section> 
 </template>
 
 <script>

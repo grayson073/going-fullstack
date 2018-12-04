@@ -1,8 +1,14 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input v-model="animal.name" require>
-    <input v-model="animal.mammal" require>
-    <input v-model="animal.weight" require>
+    <label>Name: 
+      <input v-model="animal.name" require>
+    </label>
+    <label>Mammal (T/F):
+      <input v-model="animal.mammal" require>
+    </label>
+    <label>Weight
+      <input v-model="animal.weight" require>
+    </label>
     <button>Add</button>
   </form>
 </template>

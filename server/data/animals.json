@@ -2,12 +2,25 @@
   {
     "name": "cheetah",
     "mammal": true,
-    "weight": 110
+    "weight": 110,
+    "id": "55545"
   },
   {
     "name": "bear",
     "mammal": true,
     "weight": 510,
     "id": "UktBJwP2_"
+  },
+  {
+    "name": "bear",
+    "mammal": "True",
+    "weight": "100",
+    "id": "5PbYIfkzG"
+  },
+  {
+    "name": "gecko",
+    "mammal": "false",
+    "weight": "5",
+    "id": "myJ54pxlI"
   }
 ]
