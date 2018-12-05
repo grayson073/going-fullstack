@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      guitarist: initGuitarist
+      guitarist: initGuitarist()
     };
   },
   methods: {
