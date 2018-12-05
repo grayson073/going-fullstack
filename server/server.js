@@ -16,7 +16,7 @@ function readData() {
 
 function saveData(grapplers) {
     const json = JSON.stringify(grapplers, true, 2);
-    json.writeFileSyn('./data/grapplers.json', json);
+    fs.writeFileSync('./data/grapplers.json', json);
 }
 
 // end of DB stuff
@@ -27,7 +27,7 @@ app.use(express.json());
 // start defining the REQUEST and RESPONSE methods
 // get all the data and convert it into useable JS text aka from JSON to normal stuff
 
-app.get('./api/grapplers', (req, res) => {
+app.get('/api/data/grapplers', (req, res) => {
     const grapplers = readData();
     //query used to search data in postman or in future labs IE a keyword
     // dont really need this yet 
@@ -47,7 +47,7 @@ app.get('./api/grapplers', (req, res) => {
 // go to the directed file and get all the data currently there 
 // grappler.reqbody is an object with the property body which contains the actual
 // valuable content we are interested in 
-app.post('./api/students', (req, res) => {
+app.post('./api/data/grapplers', (req, res) => {
     const grapplers = readData();
     const grappler = req.body;
 
