@@ -33,8 +33,7 @@ export default {
     handleAdd(superfood) {
       return api.addSuperfood(superfood)
         .then(saved => {
-          console.log('saved', saved);
-          // this.students.push(saved);
+          this.superfoods.push(saved);
         });
     }
   }
@@ -44,6 +43,9 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  list-style-type: none;
+}
 </style>
 
 
