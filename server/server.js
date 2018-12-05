@@ -34,13 +34,23 @@ app.get('/api/animals', (req, res) => {
     });
 });
 
+app.get('/api/animals/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM animals WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
+
 app.post('/api/animals', (req, res) => {
   const body = req.body;
 
   client.query(`
     INSERT INTO animals (name, weight, mammal)
     VALUES ($1, $2, $3)
-    RETURNING id, name, weight, mammal
+    RETURNING id, name, weight, mammal;
   `,
   [body.name, body.weight, body.mammal])
     .then(result => {

@@ -4,6 +4,11 @@ export default {
       .then(response => response.json());
   },
 
+  getAnimal(id) {
+    return fetch(`/api/animals/${id}`)
+      .then(response => response.json());
+  },
+
   addAnimal(animal) {
     return fetch('/api/animals', {
       method: 'POST',

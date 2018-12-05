@@ -1,39 +1,34 @@
 <template>
   <section class="animals">
     <h2>Animals</h2>
-
     <AddAnimal v-bind:onAdd="handleAdd"/>
-
-    <ul v-if="animals">
-      <li v-for="animal in animals" :key="animal.id">
-        <div class="info">
-          <h3>{{animal.name}}</h3>
-          <p>Mammal: {{animal.mammal}}</p>
-          <p>Weight: {{animal.weight}} pounds</p>
-        </div>
-        <img v-bind:src="animal.image">
-      </li>
-    </ul>
+    <AnimalList v-bind:animals="animals"/>
   </section> 
 </template>
 
 <script>
 import api from '../../services/api';
 import AddAnimal from './AddAnimal';
+import AnimalList from './AnimalList';
 
 export default {
   data() {
     return {
-      animals: null
+      animals: null,
+      error: null
     };
   },
   components: {
-    AddAnimal
+    AddAnimal,
+    AnimalList
   },
   created() {
     api.getAnimals()
       .then(animals => {
         this.animals = animals;
+      })
+      .catch(err => {
+        this.error = err;
       });
   },
   methods: {
