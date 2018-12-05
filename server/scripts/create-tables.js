@@ -9,9 +9,9 @@ client.connect()
 			CREATE TABLE IF NOT EXISTS emojis (
 				id SERIAL PRIMARY KEY,
 				name VARCHAR(256) NOT NULL,
-				imag_url VARCHAR(256),
+				image VARCHAR(256),
 				goodness VARCHAR(256),
-				dob DATE
+				yob INT
 			);
 		`);
   })
