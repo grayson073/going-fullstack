@@ -2,9 +2,9 @@ const pg = require('pg');
 
 const Client = pg.Client;
 
-const databaseURl = 'postgres://localhost:5432/news_articles';
+const databaseUrl = 'postgres://localhost:5432/news_articles';
 
-const client = new Client(databasUrl);
+const client = new Client(databaseUrl);
 
 client.connect()
   .then(() => {
