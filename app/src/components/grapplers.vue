@@ -6,6 +6,8 @@
         <ul>
             <li v-for="grappler in grapplers" :key="grappler.id">
                 {{grappler.name}}
+                {{grappler.id}}
+                {{grappler.age}}
             </li>
         </ul>
     </section>

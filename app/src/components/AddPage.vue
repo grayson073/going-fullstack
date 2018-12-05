@@ -2,6 +2,7 @@
     <div>
         <form @submit.prevent="handleSubmit">
             <input v-model="grappler.name" required>
+            <input v-model="grappler.age" type ="number" required>
             <button>Add</button>
         </form>
     </div>
@@ -12,7 +13,8 @@ export default {
     data() {
         return {
             grappler: {
-                name: ''
+                name: '',
+                age: ''
             }
         };
     }, 
@@ -24,7 +26,7 @@ export default {
             // console.log('banana', this.onAdd);
             this.onAdd(this.grappler) 
                 .then(() => {
-                    this.grappler = { name: '' };
+                    this.grappler = { name: '', age: '' };
                 });
         }
     }
