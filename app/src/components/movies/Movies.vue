@@ -56,7 +56,7 @@ li {
   padding: 10px;
   margin: 5px;
   text-align: center;
-  font-size:1rem;
+  font-size:1.3rem;
 }
 li:hover {
   background: darkgray;
