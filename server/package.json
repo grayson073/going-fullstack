@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:app": "cd app && npm i && npm test && cd ..",
-    "test:server": "cd server && npm i && npm test && cd ..",
-    "test": "npm run test:app && npm run test:server",
+    "load-seed-data": "node scripts/load-seed-data.js",
+    "recreate-tables": "npm run drop-tables && npm run create-tables",
+    "db-load-all": "npm run recreate-tables && npm run load-seed-data",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "start": "nodemon server.js",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-    
+    "test": "exit 0",
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
