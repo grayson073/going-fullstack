@@ -33,13 +33,12 @@ header {
 }
 .nav {
   padding: 20px;
-  color: #3ac162;
+  color: #000000;
 }
 a {
   text-decoration: none;
 
 }
-
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
