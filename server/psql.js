@@ -11,12 +11,12 @@ const client = new Client(databaseUrl);
 client.connect();
 
 client.query(`
-  SELECT name, weight, mammal FROM animals;
+  SELECT name, weight, mammal, image FROM animals;
 `)
   .then(
     results => {
       fs.writeFileSync(
-        'student.json', 
+        'animal.json', 
         JSON.stringify(results.rows, true, 2)
       );
     },

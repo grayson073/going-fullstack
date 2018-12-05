@@ -1,14 +1,8 @@
 <template>
     <ul v-if="animals">
       <li v-for="animal in animals" :key="animal.id">
-        <RouterLink :to="`/animals/${animal.id}`">{{animal.name}}</RouterLink>
+        <RouterLink :to="`/animals/${animal.id}`">{{animal.name}}{{animal.image}}</RouterLink>
       </li>
-        <!-- <div class="info">
-          <h3>{{animal.name}}</h3>
-          <p>Mammal: {{animal.mammal}}</p>
-          <p>Weight: {{animal.weight}} pounds</p>
-        </div>
-        <img v-bind:src="animal.image"> -->
     </ul>
 </template>
 

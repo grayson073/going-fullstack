@@ -13,7 +13,8 @@ client.connect()
         id SERIAL PRIMARY KEY,
         name VARCHAR(256) NOT NULL,
         weight INT,
-        mammal BOOLEAN
+        mammal BOOLEAN,
+        image TEXT
       );
     `);
   })

@@ -1,6 +1,7 @@
 <template>
   <section v-if="animal">
     <h2>{{animal.name}}</h2>
+    <img v-bind:src="animal.image"/>
     <p>
       Weight: {{animal.weight}} pounds
     </p>
