@@ -22,7 +22,7 @@ export default {
     handleSubmit() {
       this.onAdd(this.book)
         .then(() => {
-          this.book = { name: ''};
+          this.book = { name: '' };
         });
     }
   }
