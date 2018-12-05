@@ -7,6 +7,9 @@ const pg = require('pg');
 // enhanced logging
 app.use(morgan('dev'));
 
+// register the json "middleware" body parser
+app.use(express.json());
+
 /* Connect to pg */
 const Client = pg.Client;
 const dbUrl = 'postgres://localhost:5432/rockstars';
@@ -15,57 +18,42 @@ client.connect();
 /* end connect pg */
 
 
-/* This code is our very very simple database */
-
-const fs = require('fs');
-
-function readData() {
-  // we don't normally use sync, but fine for today
-  const data = fs.readFileSync('./data/singers.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(singers) {
-  const json = JSON.stringify(singers, true, 2);
-  fs.writeFileSync('./data/singers.json', json);
-}
-/* end database stuff */
-
-// register the json "middleware" body parser
-app.use(express.json());
-
 /* Defined routes: METHOD, URL PATH */
 
 // method == app.<method>
 // path = app.get('/this/is/path', ...)
 app.get('/api/singers', (req, res) => {
-  const singers = readData();
-
-  // do we have a name query param?
-  if(req.query.name) {
-    // filter singers that start with name
-    const match = req.query.name.toLowerCase();
-    const filtered = singers.filter(s => {
-      return s.name.toLowerCase().startsWith(match);
+   
+  client.query(`
+    SELECT id, name FROM singers;
+  `)
+    .then(result => {
+      res.json(result.rows);
     });
-    res.json(filtered);
-  }
-  else {
-    // send back all singers
-    res.json(singers);
-  }
+});
+
+app.get('/api/singers/:id', (req, res) => {
+  client.query(`
+      SELECT * FROM singers WHERE id = $1;
+    `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 app.post('/api/singers', (req, res) => {
+  const body = req.body;
 
-  const singers = readData();
-  const singer = req.body;
-  singer.id = shortid.generate();
-  // singer.created = new Date();
-  singers.push(singer);
-  saveData(singers);
-
-  res.json(singer);
+  client.query(`
+      INSERT INTO singers (name, genre, age, summary)
+      VALUES($1, $2, $3, $4)
+      RETURNING id, name, genre, age, summary;
+    `,
+  [body.name, body.genre, body.age, body.summary])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 /* end defined routes */
