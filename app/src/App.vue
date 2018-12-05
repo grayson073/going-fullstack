@@ -4,6 +4,7 @@
       <img alt="Vue logo" src="./assets/logo.png">
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/superheroes">Superheroes</RouterLink>
       </nav>
     </header>
 
