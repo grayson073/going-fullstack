@@ -15,7 +15,7 @@ client.connect();
 app.get('/api/animals', (req, res) => {
 
   client.query(`
-    SELECT id, name FROM animals;
+    SELECT id, name, image FROM animals;
   `)
     .then(result => {
       res.json(result.rows);
