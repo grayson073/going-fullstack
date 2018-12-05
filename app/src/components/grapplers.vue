@@ -5,9 +5,10 @@
 
         <ul>
             <li v-for="grappler in grapplers" :key="grappler.id">
-                {{grappler.name}}
-                {{grappler.id}}
-                {{grappler.age}}
+                NAME:{{grappler.name}}
+                ID:{{grappler.id}}
+                AGE:{{grappler.age}}
+                WORLDCHAMPION:{{grappler.champ}}
             </li>
         </ul>
     </section>
