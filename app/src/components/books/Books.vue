@@ -39,7 +39,7 @@ export default {
     handleAdd(book) {
       return api.addBook(book)
         .then(saved => {
-          this.students.push(saved);
+          this.books.push(saved);
         });
     }
   }

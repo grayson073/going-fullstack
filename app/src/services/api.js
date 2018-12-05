@@ -8,7 +8,7 @@ export default {
 
   addBook(book) {
     return fetch('/api/books', {
-      method: 'POST'
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },

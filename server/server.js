@@ -38,7 +38,7 @@ app.get('/api/books', (req, res) => {
 
 });
 
-app.post('/api/students', (req, res) => {
+app.post('/api/books', (req, res) => {
   const books = readData();
   const book = req.body;
   books.push(book);
