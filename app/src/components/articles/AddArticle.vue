@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input v-model="student.name" require>
+    <input v-model="article.title" require>
     <button>Add</button>
   </form>
 </template>

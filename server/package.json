@@ -4,10 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:app": "cd app && npm i && npm test && cd ..",
+    "test:server": "cd server && npm i && npm test && cd ..",
+    "test": "npm run test:app && npm run test:server",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "exit 0",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+    
   },
   "author": "",
   "license": "ISC",
@@ -20,3 +25,6 @@
     "eslint": "^5.9.0"
   }
 }
+
+
+

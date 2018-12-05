@@ -40,7 +40,7 @@ export default {
     handleAdd(article) {
       return api.addArticle(article)
         .then(saved => {
-          this.students.push(saved);
+          this.articles.push(saved);
         });
     }
   }
