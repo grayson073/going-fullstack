@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const shortid = require('shortid');
+const morgan = require('morgan');
 
 const fs = require('fs');
 
@@ -15,6 +15,7 @@ function saveData(guitarists) {
 }
 
 app.use(express.json());
+app.use(morgan('dev'));
 
 app.get('/api/guitarists', (req, res) => {
   const guitarists = readData();
@@ -35,7 +36,6 @@ app.post('/api/guitarists', (req, res) => {
   const guitarists = readData();
   const guitarist = req.body;
 
-  guitarist.id = shortid.generate();
   guitarists.push(guitarist);
   saveData(guitarists);
 

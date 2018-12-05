@@ -2,14 +2,6 @@
   <form @submit.prevent="handleSubmit">
         <input v-model="guitarist.name" placeholder="Name" require>
         <input v-model="guitarist.musicType" placeholder="Music Type" require>
-    <!-- <label>
-        Year of Birth: 
-        <input v-model="guitarist.yob" require>
-    </label>
-    <label>
-        Alive?: 
-        <input v-model="guitarist.alive" require>
-    </label> -->
     <button>Add</button>
   </form>
 </template>
@@ -23,10 +15,6 @@ export default {
     return {
       guitarist: {
         name: '',
-        // musicType: '',
-        // yob: 0,
-        // alive: false,
-
       }
     };
   },

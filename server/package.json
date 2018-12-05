@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "create-tables": "node scripts/create-tables.js",
+    "drop-tables": "node scripts/drop-tables.js",
+    "load-seed-data": "node scripts/load-seed-data.js",
+    "recreate-tables": "npm run drop-tables && npm run create-tables",
+    "db-load-all": "npm run recreate-tables && npm run load-seed-data",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "exit 0",
@@ -13,6 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "nodemon": "^1.18.7"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.7",
+    "pg": "^7.7.1"
   }
 }

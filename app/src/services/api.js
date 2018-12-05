@@ -14,5 +14,7 @@ export default {
       body: JSON.stringify(guitarist)
     })
       .then(response => response.json());
-  }
+  },
+
+  
 };
