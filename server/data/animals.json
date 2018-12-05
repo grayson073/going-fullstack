@@ -1,65 +1,10 @@
 [
   {
-    "name": "cheetah",
-    "mammal": true,
-    "weight": 110,
-    "image": "",
-    "id": "55545"
-  },
-  {
     "name": "bear",
     "mammal": true,
     "weight": 510,
     "image": "http://www.kiplinger.com/kipimages/pages/18100.jpg",
     "id": "UktBJwP2_"
-  },
-  {
-    "name": "bear",
-    "mammal": "True",
-    "weight": "100",
-    "id": "5PbYIfkzG"
-  },
-  {
-    "name": "gecko",
-    "mammal": "false",
-    "weight": "5",
-    "id": "myJ54pxlI"
-  },
-  {
-    "name": "tiger",
-    "mammal": "true",
-    "weight": "3333",
-    "id": "5W6-ghpdk"
-  },
-  {
-    "name": "whale",
-    "mammal": "true",
-    "weight": "100000",
-    "id": "xPvnyWblc"
-  },
-  {
-    "name": "test",
-    "mammal": "true",
-    "weight": "333",
-    "id": "tw86TXt7i"
-  },
-  {
-    "name": "test2",
-    "mammal": "f",
-    "weight": "333333",
-    "id": "PRnfurNUZ"
-  },
-  {
-    "name": "test3",
-    "mammal": "f",
-    "weight": "222",
-    "id": "4eyaHm2ZD"
-  },
-  {
-    "name": "tiger",
-    "mammal": "fkdslaf",
-    "weight": "111",
-    "id": "sI4lIfLJm"
   },
   {
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Siberischer_tiger_de_edit02.jpg",

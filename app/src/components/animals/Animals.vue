@@ -6,12 +6,12 @@
 
     <ul v-if="animals">
       <li v-for="animal in animals" :key="animal.id">
-        <h3>{{animal.name}}</h3>
-        <div>
-          <img v-bind:src="animal.image">
+        <div class="info">
+          <h3>{{animal.name}}</h3>
           <p>Mammal: {{animal.mammal}}</p>
           <p>Weight: {{animal.weight}} pounds</p>
         </div>
+        <img v-bind:src="animal.image">
       </li>
     </ul>
   </section> 
@@ -51,14 +51,20 @@ export default {
   li {
     list-style: none;
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 450px;
+    height: 450px;
     border: 1px solid black;
     text-align: center;
     margin: 5px 5px;
   }
   h3 {
     text-align: center;
+    z-index: 1;
+    margin: 0px;
+  }
+  .info {
+    background: rgba(255, 255, 255, 0.8);
+    margin-top: 0px;
   }
   ul {
     display: flex;
@@ -66,13 +72,13 @@ export default {
     flex-wrap: wrap;
   }
   li img {
-    height: 70%;
-    width: auto;
     position: absolute;
-    bottom: 10px;
+    top: 0;
     left: 0;
-    right: 0;
-    margin: auto;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
   }
 
 </style>
