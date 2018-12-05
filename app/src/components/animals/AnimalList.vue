@@ -1,9 +1,8 @@
 <template>
     <ul v-if="animals">
       <li v-for="animal in animals" :key="animal.id">
-        <RouterLink :to="`/animals/${animal.id}`">{{animal.name}}</RouterLink>
+        <RouterLink :to="`/animals/${animal.id}`"><h3 class="info">{{animal.name}}</h3></RouterLink>
         <img v-bind:src="animal.image"/>
-        <p>animal pic test{{animal.image}}</p>
       </li>
     </ul>
 </template>
@@ -18,6 +17,10 @@ export default {
 </script>
 
 <style>
+  a {
+    color: black;
+    text-decoration: none;
+  }
   li {
     list-style: none;
     position: relative;
@@ -35,6 +38,7 @@ export default {
   .info {
     background: rgba(255, 255, 255, 0.8);
     margin-top: 0px;
+    padding: 10px;
   }
   ul {
     display: flex;

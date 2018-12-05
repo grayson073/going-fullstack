@@ -1,13 +1,15 @@
 <template>
   <section v-if="animal">
-    <h2>{{animal.name}}</h2>
-    <img v-bind:src="animal.image"/>
-    <p>
-      Weight: {{animal.weight}} pounds
-    </p>
-    <p>
-      Mammal: {{animal.mammal}}
-    </p>
+    <div id="detail">
+      <h2>{{animal.name}}</h2>
+      <img v-bind:src="animal.image"/>
+      <p>
+        Weight: {{animal.weight}} pounds
+      </p>
+      <p>
+        Mammal: {{animal.mammal}}
+      </p>
+    </div>
   </section>
 </template>
 
@@ -27,3 +29,18 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  section {
+    border: 2px solid black;
+    text-align: center;
+  }
+  section img {
+    max-width: 300px;
+  }
+  .detail {
+    border: 1px solid black;
+    width: 600px;
+  }
+
+</style>
