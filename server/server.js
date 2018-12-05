@@ -1,4 +1,4 @@
-console.log('this is a cool test');
+// console.log('this is a cool test');
 
 const express = require('express');
 const app = express();
@@ -11,13 +11,38 @@ function readData() {
   return JSON.parse(data);
 }
 
-app.use(express.json());
-
-app.get('https://localhost:3000/api/synths', (req, res) => {
+app.get('/api/synths', (req, res) => {
   const synths = readData();
-  res.json(synths);
+  if(req.query.name) {
+    const match = req.query.name.toLowerCase();
+    const filtered = synths.filter(s => {
+      return s.name.toLowerCase().startsWith(match);
+    });
+    res.json(filtered);
+  }
+  else {
+    res.json(synths);
+  }
+  // res.json(synths);
 });
 
+function saveData(synths) {
+  const json = JSON.stringify(synths, true, 2);
+  fs.writeFileSync('./data/synths.json', json);
+}
+
+// utility that check requests, if body turn into JSON and ready it for us
+app.use(express.json());
+
+app.post('/api/synths', (req, res) => {
+  // console.log('POST synths received', req.body);
+  const synths = readData();
+  const synth = req.body;
+  // synth.id = shortid.generate();
+  synths.push(synth);
+  saveData(synths);
+  res.json(synth);
+});
 
 const PORT = 3000;
 
