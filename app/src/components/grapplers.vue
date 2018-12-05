@@ -2,7 +2,9 @@
     <section>
         <h2> Grapplers</h2>
 
+        <button @click="handleAdd()">hellow</button>
         <AddGrappler :onAdd="handleAdd"/>
+
         <ul>
             <li v-for="grappler in grapplers" :key="grappler.id">
                 {{grappler.name}}
@@ -13,12 +15,12 @@
 
 <script>
 import api from '../services/api';
-import AddGrappler from './AddPage/vue';
+import AddGrappler from './AddPage.vue';
 
 export default {
     data() {
         return {
-            students: null,
+            grapplers: null,
             error: null
         };
     },
@@ -36,9 +38,10 @@ export default {
     }, 
     methods: {
         handleAdd(grappler) {
+            console.log('banana fires');
             return api.addGrappler(grappler)
                 .then(saved => {
-                    this.grappers.push(saved);
+                    this.grapplers.push(saved);
                 });
         }
     }

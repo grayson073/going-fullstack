@@ -1,7 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="handleSubmit">
-            <input v-model:="grappler.name" required>
+            <input v-model="grappler.name" required>
             <button>Add</button>
         </form>
     </div>
@@ -9,9 +9,6 @@
 
 <script>
 export default {
-    props: {
-        onAdd: Function
-    },
     data() {
         return {
             grappler: {
@@ -19,17 +16,18 @@ export default {
             }
         };
     }, 
+    props: {
+        onAdd: Function
+    },
     methods: {
         handleSubmit() {
+            // console.log('banana', this.onAdd);
             this.onAdd(this.grappler) 
                 .then(() => {
-                    this.grappler = {
-                        name: ''
-                    };
+                    this.grappler = { name: '' };
                 });
         }
     }
-
 };
 </script>
 

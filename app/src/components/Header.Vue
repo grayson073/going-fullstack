@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1> I am the header </h1>
-        <nav>
-            <RouterLink class="home" to="/"> Home </RouterLink>
-            <RouterLink class="Add" to="/AddPage"> Add Page </RouterLink>
-        </nav>
+        <h1>
+            hello world
+        </h1>
+        <RouterLink class="home" to="/"> Home </RouterLink>
+            <RouterLink class="Add" to="/grapplers"> Add Page </RouterLink>
     </div>
 </template>
 

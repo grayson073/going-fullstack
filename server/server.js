@@ -47,7 +47,7 @@ app.get('/api/data/grapplers', (req, res) => {
 // go to the directed file and get all the data currently there 
 // grappler.reqbody is an object with the property body which contains the actual
 // valuable content we are interested in 
-app.post('./api/data/grapplers', (req, res) => {
+app.post('/api/data/grapplers', (req, res) => {
     const grapplers = readData();
     const grappler = req.body;
 

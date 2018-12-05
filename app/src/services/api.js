@@ -1,11 +1,11 @@
 export default {
     getGrapplers() {
-        return fetch('/api/grapplers')
+        return fetch('/api/data/grapplers')
             .then(response => response.json());
     }, 
 
     addGrappler(grappler) {
-        return fetch('/api/grapplers', {
+        return fetch('/api/data/grapplers', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
