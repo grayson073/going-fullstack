@@ -1,6 +1,19 @@
 const express = require('express');
 const app = express();
 const shortid = require('shortid');
+const morgan = require('morgan');
+const pg = require('pg');
+
+// enhanced logging
+app.use(morgan('dev'));
+
+/* Connect to pg */
+const Client = pg.Client;
+const dbUrl = 'postgres://localhost:5432/rockstars';
+const client = new Client(dbUrl);
+client.connect();
+/* end connect pg */
+
 
 /* This code is our very very simple database */
 

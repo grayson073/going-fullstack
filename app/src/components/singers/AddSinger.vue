@@ -4,6 +4,7 @@
     <span>Name: <input v-model="singer.name"></span>
     <span>Genre: <input v-model="singer.genre"></span>
     <span>Age: <input type=number  v-model="singer.age"></span>
+    <span>Summary: <input v-model="singer.summary"></span>
     <button>Add</button>
   </form>
 </template>
@@ -46,7 +47,7 @@ export default {
     background: lightgoldenrodyellow;
     padding: 0px 15px 15px 15px;
     border: 2px solid darkgoldenrod;
-    width: 700px;
+    width: 850px;
     font-family: 'PT Sans Narrow', sans-serif;
   }
 

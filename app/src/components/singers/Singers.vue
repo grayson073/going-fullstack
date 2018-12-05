@@ -6,7 +6,8 @@
       <li v-for="singer in singers" :key="singer.id">
         <p class="singer-name"> {{singer.name}}</p>
         <p class="singer-genre">{{singer.genre}}</p>
-        <p class="singer-genre">Age: {{singer.age}}</p>
+        <!-- <p class="singer-genre">Age: {{singer.age}}</p>
+        <p class="singer-genre">Summary: {{singer.summary}}</p> -->
       </li>
     </ul>
 
@@ -53,9 +54,13 @@ export default {
 <style lang="postcss" scoped>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
+ul {
+    display: flex;
+}
+
 li {
     list-style-type: none;
-    margin-bottom: 25px;
+    margin: 30px;
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
