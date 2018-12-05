@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Kristin Hersh",
+      "genre": "Alternative",
+      "age": 52,
+      "summary": "Founder of Throwing Muses and 50FootWave"
+    },
+    {
+      "name": "David Lee Roth",
+      "genre": "Rock",
+      "age": 58,
+      "summary": "Lead singer of Van Halen, when it was good"
+    },
+    {
+      "name": "Lordes",
+      "genre": "Pop",
+      "age": "22",
+      "summary": "Older than her years, she's reinventing the pop diva"
+    },
+    {
+      "name": "Justin Timberlake",
+      "genre": "Pop",
+      "age": "37",
+      "summary": "You know who this is"
+    }
+  ]
