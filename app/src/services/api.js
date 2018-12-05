@@ -4,9 +4,9 @@ export default {
       .then(response => response.json());
   },
 
-  addBooks(book) {
+  addBook(book) {
     return fetch('/api/books', {
-      methods: 'POST',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },

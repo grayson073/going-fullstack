@@ -21,7 +21,7 @@ export default {
     handleSubmit() {
       this.onAdd(this.book)
         .then(() => {
-          this.book = { title: '' };
+          this.book = { title:'' };
         });
     }
   }
