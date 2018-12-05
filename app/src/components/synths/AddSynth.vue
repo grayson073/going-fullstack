@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input v-model="synth.name" required>
+    <input v-model="synth.name">
     <button>Add</button>
   </form>
 </template>

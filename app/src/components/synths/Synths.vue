@@ -35,11 +35,11 @@ export default {
   },
   methods: {
     handleAdd(synth) {
-      console.log('would add', synth.name);
-      // return api.addSynth(synth)
-      //   .then(saved => {
-      //     this.synths.push(saved);
-      //   });
+      return api.addSynth(synth)
+        .then(saved => {
+          // console.log('we just saved', saved);
+          this.synths.push(saved);
+        });
     }
   }
 };

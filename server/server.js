@@ -11,21 +11,6 @@ function readData() {
   return JSON.parse(data);
 }
 
-app.get('/api/synths', (req, res) => {
-  const synths = readData();
-  // if(req.query.name) {
-  //   const match = req.query.name.toLowerCase();
-  //   const filtered = synths.filter(s => {
-  //     return s.name.toLowerCase().startsWith(match);
-  //   });
-  //   res.json(filtered);
-  // }
-  // else {
-  //   res.json(synths);
-  // }
-  res.json(synths);
-});
-
 function saveData(synths) {
   const json = JSON.stringify(synths, true, 2);
   fs.writeFileSync('./data/synths.json', json);
@@ -34,11 +19,27 @@ function saveData(synths) {
 // utility that check requests, if body turn into JSON and ready it for us
 app.use(express.json());
 
+app.get('/api/synths', (req, res) => {
+  const synths = readData();
+  if(req.query.name) {
+    const match = req.query.name.toLowerCase();
+    const filtered = synths.filter(s => {
+      return s.name.toLowerCase().startsWith(match);
+    });
+    res.json(filtered);
+  }
+  else {
+    res.json(synths);
+  }
+});
+
+
 app.post('/api/synths', (req, res) => {
   // console.log('POST synths received', req.body);
   const synths = readData();
   const synth = req.body;
   synth.id = shortid.generate();
+  // synth.created = new Date();
   synths.push(synth);
   saveData(synths);
   res.json(synth);
