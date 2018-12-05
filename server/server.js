@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-// const shortid = require('shortid');
+const shortid = require('shortid');
 
 const fs = require('fs');
 
@@ -13,17 +13,17 @@ function readData() {
 
 app.get('/api/synths', (req, res) => {
   const synths = readData();
-  if(req.query.name) {
-    const match = req.query.name.toLowerCase();
-    const filtered = synths.filter(s => {
-      return s.name.toLowerCase().startsWith(match);
-    });
-    res.json(filtered);
-  }
-  else {
-    res.json(synths);
-  }
-  // res.json(synths);
+  // if(req.query.name) {
+  //   const match = req.query.name.toLowerCase();
+  //   const filtered = synths.filter(s => {
+  //     return s.name.toLowerCase().startsWith(match);
+  //   });
+  //   res.json(filtered);
+  // }
+  // else {
+  //   res.json(synths);
+  // }
+  res.json(synths);
 });
 
 function saveData(synths) {
@@ -38,7 +38,7 @@ app.post('/api/synths', (req, res) => {
   // console.log('POST synths received', req.body);
   const synths = readData();
   const synth = req.body;
-  // synth.id = shortid.generate();
+  synth.id = shortid.generate();
   synths.push(synth);
   saveData(synths);
   res.json(synth);
