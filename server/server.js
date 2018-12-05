@@ -1,58 +1,54 @@
 const express = require('express');
 const app = express();
-const shortid = require('shortid');
-
-/* This code is our very very simple database */
-
-const fs = require('fs');
-
-function readData() {
-  // we don't normally use sync, but fine for today
-  const data = fs.readFileSync('./data/superfoods.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(superfoods) {
-  const json = JSON.stringify(superfoods, true, 2);
-  fs.writeFileSync('./data/superfoods.json', json);
-}
-/* end database stuff */
+const pg = require('pg');
 
 // register the json "middleware" body parser
 app.use(express.json());
+
+/* Connect to pg */
+const Client = pg.Client;
+const dbUrl = 'postgres://localhost:5432/foods';
+const client = new Client(dbUrl);
+client.connect();
+/* end connect pg */
 
 /* Defined routes: METHOD, URL PATH */
 
 // method == app.<method>
 // path = app.get('/this/is/path', ...)
 app.get('/api/superfoods', (req, res) => {
-  const superfoods = readData();
 
-  // do we have a name query param?
-  if(req.query.name) {
-    // filter superfoods that start with name
-    const match = req.query.name.toLowerCase();
-    const filtered = superfoods.filter(s => {
-      return s.name.toLowerCase().startsWith(match);
+  client.query(`
+    SELECT id, name FROM superfoods;
+  `)
+    .then(result => {
+      res.json(result.rows);
     });
-    res.json(filtered);
-  }
-  else {
-    // send back all students
-    res.json(superfoods);
-  }
+
+});
+
+app.get('/api/superfoods/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM superfoods WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 app.post('/api/superfoods', (req, res) => {
+  const body = req.body;
 
-  const superfoods = readData();
-  const superfood = req.body;
-  superfood.id = shortid.generate();
-  // superfood.created = new Date();
-  superfoods.push(superfood);
-  saveData(superfoods);
-
-  res.json(superfood);
+  client.query(`
+    INSERT INTO superfoods (name, benefits, is_anti_inflammatory)
+    VALUES($1, $2, $3)
+    RETURNING id, name, benefits, is_anti_inflammatory;
+  `,
+  [body.name, body.benefits, body.is_anti_inflammatory])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 /* end defined routes */
@@ -65,3 +61,4 @@ app.listen(PORT, () => {
 });
 
 /* end configure and server start */
+
