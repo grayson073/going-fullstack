@@ -10,11 +10,15 @@ function readData() {
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/api/movies', (req, res) => {
   const movies = readData();
-  console.log('movies', movies);
+  res.json(movies);
 });
 
+app.post('/api/movies', (req, res) => {
+  const movies = readData();
+  res.json(movies);
+});
 const PORT = 3000;
 
 app.listen(PORT, () => {
