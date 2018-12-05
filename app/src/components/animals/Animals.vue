@@ -38,6 +38,13 @@ export default {
   },
   methods: {
     handleAdd(animal) {
+      animal.weight = parseInt(animal.weight);
+      if(animal.mammal === 'true') {
+        animal.mammal = true;
+      }
+      else {
+        animal.mammal = false;
+      }
       return api.addAnimal(animal)
         .then(saved => {
           this.animals.push(saved);

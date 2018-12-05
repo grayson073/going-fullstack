@@ -5,7 +5,7 @@
     </label>
     
     <label>Weight
-      <input v-model="animal.weight" require>
+      <input v-model="animal.weight" type="number" require>
     </label>
 
     <label>Mammal (T/F):
