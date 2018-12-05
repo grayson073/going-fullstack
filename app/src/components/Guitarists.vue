@@ -7,6 +7,7 @@
     <ul v-if="guitarists">
       <li v-for="guitarist in guitarists" :key="guitarist.id">
         {{guitarist.name}}
+        <!-- {{guitarist.musicType}} -->
       </li>
     </ul>
   </section>

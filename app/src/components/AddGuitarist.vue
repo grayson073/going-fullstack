@@ -4,7 +4,7 @@
         Name: 
         <input v-model="guitarist.name" require>
     </label>
-    <label>
+    <!-- <label>
         Music Type: 
         <input v-model="guitarist.musicType" require>
     </label>
@@ -15,7 +15,7 @@
     <label>
         Alive?: 
         <input v-model="guitarist.alive" require>
-    </label>
+    </label> -->
     <button>Add</button>
   </form>
 </template>
@@ -28,7 +28,11 @@ export default {
   data() {
     return {
       guitarist: {
-        name: ''
+        name: '',
+        // musicType: '',
+        // yob: 0,
+        // alive: false,
+
       }
     };
   },
