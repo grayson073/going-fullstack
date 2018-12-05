@@ -7,7 +7,7 @@ const client = new Client(databaseUrl);
 client.connect()
   .then(() => {
     return client.query(`
-      DROP TABLE IF EXISTS foods;
+      DROP TABLE IF EXISTS superfoods;
     `);
   })
   .then(

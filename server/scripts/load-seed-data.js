@@ -11,7 +11,7 @@ client.connect()
     return Promise.all(
       superfoods.map(superfood => {
         return client.query(`
-          INSERT INTO students (name, benefits, is_anti_inflammatory)
+          INSERT INTO superfoods (name, benefits, is_anti_inflammatory)
           VALUES ($1, $2, $3);
         `,
         [superfood.name, superfood.benefits, superfood.is_anti_inflammatory]);

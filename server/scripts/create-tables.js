@@ -11,7 +11,7 @@ client.connect()
         id SERIAL PRIMARY KEY,
         name VARCHAR(256) NOT NULL,
         benefits VARCHAR(256),
-        anti_inflammatory BOOLEAN
+        is_anti_inflammatory BOOLEAN
       );
     `);
   })
