@@ -4,7 +4,7 @@
         <AddMovie :onAdd="handleAdd"/>
 
         <ul v-if="movies">
-            <li v-for="movie in movies" :key="movie.year">
+            <li v-for="movie in movies" :key="movie.id">
                 {{movie.name}}
                 {{movie.year}}
             </li>
@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     handleAdd(movie) {
+        console.log('movie', movie);
       return api.addMovie(movie)
         .then(saved => {
           this.movies.push(saved);

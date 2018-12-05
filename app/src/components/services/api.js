@@ -5,7 +5,7 @@ export default {
   },
 
   addMovie(movie) {
-    return fetch('api/movies', {
+    return fetch('/api/movies', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

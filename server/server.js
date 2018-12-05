@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const shortid = require('shortid');
 
 const fs = require('fs');
 
@@ -22,6 +23,7 @@ app.get('/api/movies', (req, res) => {
 app.post('/api/movies', (req, res) => {
   const movies = readData();
   const movie = req.body;
+  movie.id = shortid.generate();
   movies.push(movie);
   saveData(movies);
 
