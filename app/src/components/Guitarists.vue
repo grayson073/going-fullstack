@@ -2,7 +2,7 @@
     <section class="guitarists">
     <h2>Guitarists</h2>
     
-    <AddGuitarist :onAdd="handleAdd"/>
+    <AddGuitarist :onAdd="handleAdd" class="add"/>
 
     <ul v-if="guitarists">
       <li v-for="guitarist in guitarists" :key="guitarist.id">
@@ -66,5 +66,11 @@ li {
 }
 .music-type {
   font-style: italic;
+}
+p {
+  padding: 10px;
+}
+.add {
+  padding: 20px;
 }
 </style>

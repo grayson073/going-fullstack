@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style>
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
 header {
   display: flex;
   justify-content: flex-end;
