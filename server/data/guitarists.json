@@ -28,11 +28,18 @@
     "id": "50jBEz8S1"
   },
   {
-    "name": "Pete",
+    "name": "John Williams",
+    "musicType": "classical",
     "id": "BCaZPI09L"
   },
   {
-    "name": "Lista",
+    "name": "The Edge",
+    "musicType": "pop",
     "id": "mK9fv-CAK"
+  },
+  {
+    "name": "Rose",
+    "musicType": "Heavy Metal",
+    "id": "RXTvdIeKy"
   }
 ]

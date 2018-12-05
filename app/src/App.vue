@@ -2,8 +2,8 @@
   <div class="app">
     <header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/guitarists">Guitarists</RouterLink>
+        <RouterLink to="/" class="nav">Home</RouterLink>
+        <RouterLink to="/guitarists" class="nav">Guitarists</RouterLink>
       </nav>
     </header>
 
@@ -22,6 +22,21 @@ export default {
 </script>
 
 <style>
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+.nav {
+  padding: 20px;
+  color: #3ac162;
+}
+a {
+  text-decoration: none;
+
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

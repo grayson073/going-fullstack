@@ -1,7 +1,7 @@
 <template>
   <section>
-    <h2>Favorite Guitarists App</h2>
-    <RouterLink to="/guitarists">view guitarists</RouterLink>
+    <h1>Favorite Guitarists App</h1>
+    <RouterLink to="/guitarists" class="cta">view guitarists</RouterLink>
   </section>
 </template>
 
@@ -11,18 +11,28 @@ export default {};
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 ul {
   list-style-type: none;
   padding: 0;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+section {
+  text-align: center;
 }
-a {
-  color: #42b983;
+h1 {
+  margin: 60px;
+}
+.cta {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+.cta:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
 }
 </style>

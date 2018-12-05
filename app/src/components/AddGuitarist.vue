@@ -1,14 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <label>
-        Name: 
-        <input v-model="guitarist.name" require>
-    </label>
+        <input v-model="guitarist.name" placeholder="Name" require>
+        <input v-model="guitarist.musicType" placeholder="Music Type" require>
     <!-- <label>
-        Music Type: 
-        <input v-model="guitarist.musicType" require>
-    </label>
-    <label>
         Year of Birth: 
         <input v-model="guitarist.yob" require>
     </label>
@@ -48,4 +42,29 @@ export default {
 </script>
 
 <style>
+input {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 5px;
+}
+button {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    background: #6AD58B;
+    transition: background 0.3s ease;
+}
+button:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
 </style>

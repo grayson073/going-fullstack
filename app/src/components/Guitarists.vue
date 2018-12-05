@@ -6,8 +6,11 @@
 
     <ul v-if="guitarists">
       <li v-for="guitarist in guitarists" :key="guitarist.id">
-        {{guitarist.name}}
-        <!-- {{guitarist.musicType}} -->
+       <p> 
+         <span class="name">
+           {{guitarist.name}}</span> -- 
+           <span class="music-type">{{guitarist.musicType}}</span>
+       </p>
       </li>
     </ul>
   </section>
@@ -42,6 +45,9 @@ export default {
         .then(saved => {
           this.guitarists.push(saved);
         });
+    },
+    remove(id) {
+      this.skills.splice(id, 1);
     }
   }
   
@@ -49,5 +55,16 @@ export default {
 </script>
 
 <style>
-
+li {
+  list-style: none;
+}
+.guitarists {
+  text-align: center;
+}
+.name {
+  font-weight: bold;
+}
+.music-type {
+  font-style: italic;
+}
 </style>
