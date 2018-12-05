@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Thinky",
+    "yob": 1985,
+    "image": "https://cdn.shopify.com/s/files/1/1061/1924/products/Thinking_Face_Emoji_large.png?v=1480481060",
+    "id": "kfT5OEKjP",
+    "goodness": true
+  },
+  {
+    "name": "Shruggy",
+    "yob": 1989,
+    "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/11/shrug-796x398.png",
+    "id": "-oQ0hXsFI",
+    "goodness": false
+  },
+  {
+    "name": "Cooly",
+    "yob": 1990,
+    "image": "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/smiling-face-with-sunglasses.png",
+    "id": "fCzdTDLaO",
+    "goodness": true
+  },
+  {
+    "name": "Saddy",
+    "yob": 1985,
+    "image": "https://hyperallergic.com/wp-content/uploads/2018/07/Apple_Emoji_update_2018_Face-with-Pleading-Eyes.jpg",
+    "id": "z8krGPJ5p",
+    "goodness": false
+  },
+  {
+    "id": "Br2hwyq7n"
+  },
+  {
+    "name": "lkj",
+    "image": "https://www.littledayout.com/wp-content/uploads/articles/2017/07-July/20170715-WorldEmojiDay/DabEmoji.jpg",
+    "id": "7yHUdiJ3Y"
+  }
+]
