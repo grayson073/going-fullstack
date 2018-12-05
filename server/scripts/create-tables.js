@@ -10,7 +10,7 @@ client.connect()
       CREATE TABLE IF NOT EXISTS guitarists (
         id SERIAL PRIMARY KEY,
         name VARCHAR(256) NOT NULL,
-        music_type VARCHAR(256),
+        type VARCHAR(256),
         yob INT
       );
     `);

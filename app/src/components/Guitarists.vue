@@ -1,24 +1,15 @@
 <template>
     <section class="guitarists">
-    <h2>Guitarists</h2>
-    
-    <AddGuitarist :onAdd="handleAdd" class="add"/>
-
-    <ul v-if="guitarists">
-      <li v-for="guitarist in guitarists" :key="guitarist.id">
-       <p> 
-         <span class="name">
-           {{guitarist.name}}</span> -- 
-           <span class="music-type">{{guitarist.musicType}}</span>
-       </p>
-      </li>
-    </ul>
+      <h2>Guitarists</h2>
+      <AddGuitarist :onAdd="handleAdd"/>
+      <GuitaristList :guitarists="guitarists"/>
   </section>
 </template>
 
 <script>
 import api from '../services/api';
 import AddGuitarist from './AddGuitarist';
+import GuitaristList from './GuitaristList';
 
 export default {
   data() {
@@ -28,7 +19,8 @@ export default {
     };
   },
   components: {
-    AddGuitarist
+    AddGuitarist,
+    GuitaristList
   },
   created() {
     api.getGuitarists()
@@ -45,9 +37,6 @@ export default {
         .then(saved => {
           this.guitarists.push(saved);
         });
-    },
-    remove(id) {
-      this.skills.splice(id, 1);
     }
   }
   

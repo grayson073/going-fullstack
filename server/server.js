@@ -37,11 +37,11 @@ app.post('/api/guitarists', (req, res) => {
   const body = req.body;
 
   client.query(`
-    INSERT INTO guitarists (name, music_type, track, yob)
+    INSERT INTO guitarists (name, type, track, yob)
     VALUES($1, $2, $3)
-    RETURNING id, name, music_type as "musicType", yob;
+    RETURNING id, name, type as "type", yob;
   `,
-  [body.name, body.musicType, body.yob])
+  [body.name, body.type, body.yob])
     .then(result => {
       res.json(result.rows[0]);
     });

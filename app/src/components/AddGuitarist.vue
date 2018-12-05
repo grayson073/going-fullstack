@@ -1,28 +1,34 @@
 <template>
   <form @submit.prevent="handleSubmit">
         <input v-model="guitarist.name" placeholder="Name" require>
-        <input v-model="guitarist.musicType" placeholder="Music Type" require>
+        <input v-model="guitarist.type" placeholder="Music Type" require>
+        <input type="number" v-model="guitarist.yob" placeholder="Year of Birth" require>
     <button>Add</button>
   </form>
 </template>
 
 <script>
+function initGuitarist() {
+  return {
+    name: '',
+    type: '',
+    yob: '',
+  };
+}
 export default {
   props: {
     onAdd: Function
   },
   data() {
     return {
-      guitarist: {
-        name: '',
-      }
+      guitarist: initGuitarist
     };
   },
   methods: {
     handleSubmit() {
       this.onAdd(this.guitarist)
         .then(() => {
-          this.guitarist = { name: '' };
+          this.guitarist = initGuitarist();
         });
     }
   }

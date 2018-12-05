@@ -10,10 +10,10 @@ client.connect()
     return Promise.all(
       guitarists.map(guitarist => {
         return client.query(`
-          INSERT INTO guitarists (name, music_type, yob)
+          INSERT INTO guitarists (name, type, yob)
           VALUES ($1, $2, $3);
         `,
-        [guitarist.name, guitarist.musicType, guitarist.yob]);
+        [guitarist.name, guitarist.type, guitarist.yob]);
       })
     );
   })

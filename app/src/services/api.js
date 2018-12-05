@@ -4,6 +4,10 @@ export default {
     return fetch('/api/guitarists')
       .then(response => response.json());      
   },
+  getGuitarist(id) {
+    return fetch(`/api/guitarists/${id}`)
+      .then(response => response.json());
+  },
   
   addGuitarist(guitarist) {
     return fetch('/api/guitarists', {
@@ -15,6 +19,4 @@ export default {
     })
       .then(response => response.json());
   },
-
-  
 };
