@@ -1,9 +1,18 @@
 const pg = require('pg');
 const Client = pg.Client;
 const dataBaseUrl = 'postgres://localhost:5432/school';
-const client =  new Client(dataBaseUrl);
+const client = new Client(dataBaseUrl);
 
 client.connect()
-.then(( => {
-    return.client.q
-})
+    .then(() => {
+        return client.query(` 
+    DROP TABLE IF EXISTS grapplers;
+    `);
+    })
+    .then(
+        () => console.log('drop tables complete'),
+        err => console.log(err)
+    )
+    .then(() => {
+        client.end();
+    });
