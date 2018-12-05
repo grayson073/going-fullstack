@@ -37,9 +37,9 @@ app.post('/api/guitarists', (req, res) => {
   const body = req.body;
 
   client.query(`
-    INSERT INTO guitarists (name, type, track, yob)
+    INSERT INTO guitarists (name, type, yob)
     VALUES($1, $2, $3)
-    RETURNING id, name, type as "type", yob;
+    RETURNING id, name, type, yob;
   `,
   [body.name, body.type, body.yob])
     .then(result => {
@@ -47,9 +47,6 @@ app.post('/api/guitarists', (req, res) => {
     });
 });
 
-/* end defined routes */
-
-/* configure and start the server */
 const PORT = 3000;
 
 app.listen(PORT, () => {
