@@ -39,10 +39,10 @@ app.get('api/grapplers/:id', (req, res) => {
 app.post('/api/data/grapplers', (req, res) => {
     const body = req.body;
     client.query (`
-    INSERT INTO grapplers (id, name, age, champ)
-    VALUES($1, $2, $3, $4)
+    INSERT INTO grapplers (name, age, champ)
+    VALUES($1, $2, $3)
     RETURNING id, name, age, champ;`,
-    [body.name, body.age, body.champ, body.id])
+    [body.name, body.age, body.champ])
         .then(result => {
             res.json(result.rows[0]);
         });

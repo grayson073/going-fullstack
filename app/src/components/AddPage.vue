@@ -5,8 +5,8 @@
             <input v-model="grappler.name" required>
             <label> Age:</label>
             <input v-model="grappler.age" type ="number" required>
-            <label> WorldChampion?</label>
-            <input v-model="grappler.champion" type="radio" name="champion" id="champion" value="true">
+            <label> WorldChampion? Yes/No</label>
+            <input v-model="grappler.champ" type="checkbox" name="champion" id="champ" value="true">
             <button>Add</button>
         </form>
     </div>

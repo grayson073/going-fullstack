@@ -12,11 +12,11 @@ client.connect()
             age INTEGER,
             champ BOOLEAN);
 
-        `)
+        `);
     })
-    .then( console.log('new table has been created'), 
-    err => console.log(err)
+    .then(console.log('new table has been created'), 
+        err => console.log(err)
     )
     .then(() =>{
         client.end();
-    })
+    });
