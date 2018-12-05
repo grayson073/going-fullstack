@@ -1,54 +1,58 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
+const pg = require('pg');
 
 /* setting up simple database */
 
-const fs = require('fs');
-
-function readData() {
-  const data = fs.readFileSync('./data/articles.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(articles) {
-  const json = JSON.stringify(articles, true, 2);
-  fs.writeFileSync('./data/articles.json', json);
-}
-
-/*end database*/
+app.use(morgan('dev'));
 
 app.use(express.json());
 
+/* connect to pg */
+const Client = pg.Client;
+const dbUrl = 'postgres://localhost:5432/news_articles';
+const client = new Client(dbUrl);
+client.connect();
 
 app.get('/api/articles', (req, res) => {
-  const articles = readData();
 
-  if(req.query.name) {
-    const match = req.query.title.toLowerCase();
-    const filtered = articles.filter(s => {
-      return s.title.toLowerCase().startsWith(match);
+  client.query(`
+    SELECT id, title FROM news_articles;
+  `)
+    .then(result => {
+      res.json(result.rows);
     });
-    res.json(filtered);
-  }
-  else {
-    res.json(articles);
-  }
 });
 
-app.post('/api/articles', (req, res) => {
+app.get('/api/articles/:id', (req, res) => {
 
-  const articles = readData();
-  const article = req.body;
-  articles.push(article);
-  saveData(articles);
+  client.query(`
+    SELECT * FROM news_articles WHERE Views = 1000
+  `,
+  [req.params.Views])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
 
-  res.json(article);
-  
+app.post('/api/news_articles', (req, res)=> {
+  const body = req.body;
+
+  client.query(`
+    INSERT INTO news_articles(title, author, views)
+    VALUES ($1, $2, $3, $4)
+    RETURNING title, author, views
+  `,
+  [body.title, body.author, body.views])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 /* configure and start the server */
-
 const PORT = 3000;
+
 app.listen(PORT, () => {
   console.log('server app started on port', PORT);
 });
