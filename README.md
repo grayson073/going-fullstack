@@ -1,4 +1,4 @@
-# app
+# going-fullstack
 
 ## Project setup
 ```
