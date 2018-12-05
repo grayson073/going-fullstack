@@ -73,4 +73,7 @@ p {
 .add {
   padding: 20px;
 }
+h2 {
+  font-size: 50px;
+}
 </style>

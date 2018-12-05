@@ -48,4 +48,7 @@ a {
   color: #2c3e50;
   margin-top: 60px;
 }
+body {
+   background: #E1EFE6;
+}
 </style>

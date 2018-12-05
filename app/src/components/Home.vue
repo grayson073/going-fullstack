@@ -20,6 +20,7 @@ section {
 }
 h1 {
   margin: 60px;
+  font-size: 50px;
 }
 .cta {
   color: white;
