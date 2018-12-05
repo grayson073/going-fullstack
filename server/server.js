@@ -24,7 +24,6 @@ app.get('/api/emojis', (req, res) => {
 app.post('/api/emojis', (req, res) => {
   const emojis = readData();
   const emoji = req.body;
-  console.log('req', req);
   console.log('server emoji', emoji);
   emoji.id = shortid.generate();
   emojis.push(emoji);

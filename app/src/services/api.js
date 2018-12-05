@@ -9,7 +9,7 @@ export default {
     console.log('api emoji', emoji);
     return fetch('/api/emojis', {
       method: 'POST',
-      header: {
+      headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(emoji)
