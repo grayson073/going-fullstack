@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     handleAdd(book) {
+      console.log('bananas');
       return api.addBook(book)
         .then(saved => {
           this.books.push(saved);    
