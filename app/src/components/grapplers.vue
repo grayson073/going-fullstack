@@ -1,8 +1,6 @@
 <template>
     <section>
         <h2> Grapplers</h2>
-
-        <button @click="handleAdd()">hellow</button>
         <AddGrappler :onAdd="handleAdd"/>
 
         <ul>
