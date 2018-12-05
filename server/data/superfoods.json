@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Dark Leafy Greens",
+    "benefits": "Dark green leafy vegetables are full of fiber and nutrients which may be instrumental in preventing certain chronic diseases.",
+    "anti_inflammatory": true,
+    "id": "kfT5OEKjP"
+  },
+  {
+    "name": "Seaweed",
+    "benefits": "Seaweed is a group of highly nutritious sea vegetables that may play a role in protecting against certain chronic diseases.",
+    "anti_inflammatory": false,
+    "id": "-oQ0hXsFI"
+  },
+  {
+    "name": "Mushrooms",
+    "benefits": "Mushrooms are full of nutrients and may reduce your risk of certain diseases. Additionally, mushrooms are a sustainable food choice.",
+    "anti_inflammatory": true,
+    "id": "4RAiDaQKn"
+  },
+  {
+    "name": "Avocado",
+    "benefits": "Avocados are nutrient-rich, high-fiber fruits that may play a role in reducing inflammation and chronic diseases.",
+    "anti_inflammatory": true,
+    "id": "vUJW4F1MU"
+  },
+  {
+    "name": "Garlic",
+    "benefits": "Garlic is a nutrient-rich food used for its medicinal benefits for centuries. It may be useful for supporting immune function and reducing your risk of heart disease and certain cancers.",
+    "anti_inflammatory": false,
+    "id": "iQXIUzwwa"
+  },
+  {
+    "name": "Green Tea",
+    "benefits": "Green tea is antioxidant-rich with many health benefits including possible cancer prevention.",
+    "anti_inflammatory": true,
+    "id": "MqSeJBkoj"
+  },
+  {
+    "name": "Berries",
+    "benefits": "Berries are full of nutrients and antioxidants which may prevent certain diseases and improve digestion.",
+    "anti_inflammatory": true,
+    "id": "WlVl2rn5m"
+  },
+  {
+    "name": "Legumes",
+    "benefits": "Legumes are rich in many vitamins, protein and fiber. They may prevent some chronic diseases and support weight loss.",
+    "anti_inflammatory": false,
+    "id": "63tt6Syd0"
+  }
+]
