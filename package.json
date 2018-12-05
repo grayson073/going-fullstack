@@ -5,5 +5,20 @@
     "test:app": "cd app && npm i && npm test && cd ..",
     "test:server": "cd server && npm i && npm test && cd ..",
     "test": "npm run test:app && npm run test:server"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zilula/going-fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zilula/going-fullstack/issues"
+  },
+  "homepage": "https://github.com/Zilula/going-fullstack#readme",
+  "description": "",
+  "dependencies": {
+    "vue-router": "^3.0.2"
   }
 }
