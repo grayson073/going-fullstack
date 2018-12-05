@@ -1,8 +1,8 @@
 {
-  "name": "ls",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",

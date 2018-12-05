@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Batman",
+    "age": 40,
+    "invisible": false
+  },
+  {
+    "name": "Spiderman",
+    "age": 45,
+    "flies": false
+  },
+  {
+    "name": "Ironman",
+    "age": 42,
+    "flies": true
+  }
+]
