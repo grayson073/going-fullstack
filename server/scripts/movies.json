@@ -2,16 +2,16 @@
   {
     "name": "Incredibles",
     "year": 2004,
-    "rating": "good"
+    "rating": true
   },
   {
     "name": "Robot Monster",
     "year": 1953,
-    "rating": "bad"
+    "rating": false
   },
   {
     "name": "Inception",
     "year": 2010,
-    "rating": "good"
+    "rating": true
   }
 ]
