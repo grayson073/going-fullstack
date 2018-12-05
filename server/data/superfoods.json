@@ -37,6 +37,8 @@
   },
   {
     "name": "Berries",
+    "benefits": "Berries are full of nutrients and antioxidants which may prevent certain diseases and improve digestion.",
+    "anti_inflammatory": true,
     "id": "WlVl2rn5m"
   },
   {

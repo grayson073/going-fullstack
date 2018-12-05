@@ -6,6 +6,7 @@
     <ul v-if="superfoods">
       <li v-for="superfood in superfoods" :key="superfood.id">
         {{superfood.name}}
+        <p>Benefits: {{superfood.benefits}}</p>
       </li>
     </ul>
   </section>
