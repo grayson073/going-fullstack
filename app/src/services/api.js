@@ -1,6 +1,6 @@
 export default {
   getBooks() {
-    return fetch('api/books')
+    return fetch('/api/books')
       .then(response => response.json());
   },
 
