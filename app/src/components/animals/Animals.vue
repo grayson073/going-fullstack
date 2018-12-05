@@ -49,13 +49,30 @@ export default {
 
 <style>
   li {
-    list-style-type: none;
-    border: 2px solid black;
-    margin-bottom: 5px;
-    width: 200px;
+    list-style: none;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 5px 5px;
   }
   h3 {
     text-align: center;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  li img {
+    height: 70%;
+    width: auto;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
 </style>
