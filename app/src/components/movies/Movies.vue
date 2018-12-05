@@ -1,6 +1,7 @@
 <template>
     <section>
         <h2>Movies</h2>
+
         <AddMovie :onAdd="handleAdd"/>
 
         <ul v-if="movies">
@@ -20,6 +21,7 @@ export default {
   data() {
     return {
       movies: null,
+      error: null
     };
   },
   components: {
@@ -32,11 +34,13 @@ export default {
       })
       .catch(err => {
         this.error = err;
+      })
+      .catch(err => {
+        this.error = err;
       });
   },
   methods: {
     handleAdd(movie) {
-        console.log('movie', movie);
       return api.addMovie(movie)
         .then(saved => {
           this.movies.push(saved);

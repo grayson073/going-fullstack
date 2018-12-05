@@ -27,7 +27,7 @@ app.post('/api/movies', (req, res) => {
   movies.push(movie);
   saveData(movies);
 
-  res.json(movies);
+  res.json(movie);
 });
 const PORT = 3000;
 

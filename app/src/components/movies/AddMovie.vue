@@ -1,7 +1,10 @@
 <template>
     <form @submit.prevent="handleSubmit">
         <label> Movie Name
-        <input v-model="movie.name" required>
+        <input v-model="movie.name" require>
+        </label>
+        <label> Year
+        <input v-model="movie.year" require>
         <button>Add</button>
         </label>
     </form>
@@ -27,7 +30,6 @@ export default {
         });
     }
   }
-
 };
 </script>
 

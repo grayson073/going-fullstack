@@ -1,6 +1,7 @@
 <template>
     <section>
-        <h1>Hello World! This is home</h1>
+        <h1>Welcome</h1>
+        <RouterLink to="/movies">View Movies</RouterLink>
     </section>
 </template>
 
