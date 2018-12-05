@@ -19,6 +19,7 @@ export default {};
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
 header {
   height: 75px;
@@ -26,6 +27,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 header img {

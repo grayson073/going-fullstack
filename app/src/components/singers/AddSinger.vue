@@ -3,12 +3,13 @@
     <p class="add-title">Add your favorite singer:</p>
     <span>Name: <input v-model="singer.name"></span>
     <span>Genre: <input v-model="singer.genre"></span>
-    <span>Age: <input v-model="singer.age"></span>
+    <span>Age: <input type=number  v-model="singer.age"></span>
     <button>Add</button>
   </form>
 </template>
 
 <script>
+
 export default {
   props: {
     onAdd: Function
@@ -38,12 +39,15 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
   form {
     margin-top: 30px;
     background: lightgoldenrodyellow;
     padding: 0px 15px 15px 15px;
     border: 2px solid darkgoldenrod;
     width: 700px;
+    font-family: 'PT Sans Narrow', sans-serif;
   }
 
   span {

@@ -51,9 +51,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
 li {
     list-style-type: none;
     margin-bottom: 25px;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .singer-name {
