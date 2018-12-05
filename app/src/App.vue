@@ -30,14 +30,14 @@ export default {};
 }
 header {
   height: 75px;
-  background: lightsteelblue;
+  background: yellowgreen;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
  header img {
   height: 100%;
-  background: lightsteelblue;
+  background: yellowgreene;
 
 }
  nav a {
