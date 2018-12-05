@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    Hello!
     <header>
       <nav>
         <RouterLink to="/">Home</RouterLink>
