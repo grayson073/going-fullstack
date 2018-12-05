@@ -36,7 +36,10 @@ export default {
   },
   methods: {
     handleAdd(emoji) {
-      console.log(emoji);
+      return api.addEmoji(emoji)
+        .then(saved => {
+          this.emojis.push(saved);
+        });
     }
   }
 };

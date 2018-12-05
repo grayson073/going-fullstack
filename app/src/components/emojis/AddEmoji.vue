@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="onAdd(emoji)">
+    <form @submit.prevent="handleSubmit">
         <label>
             Name:
             <input v-model="emoji.name" required>
@@ -21,6 +21,14 @@ export default {
   },
   props: {
     onAdd: Function
+  },
+  methods: {
+    handleSubmit() {
+      this.onAdd(this.emoji)
+        .then(() => {
+          this.emoji = {};
+        });
+    }
   }
 };
 </script>
