@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h2>Movies</h2>
+        <h2>List of Great Movies</h2>
 
         <AddMovie :onAdd="handleAdd"/>
 
@@ -51,6 +51,16 @@ export default {
 </script>
 
 <style>
+li {
+  list-style: none;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  font-size:1rem;
+}
+li:hover {
+  background: darkgray;
+}
 
 </style>
 

@@ -34,5 +34,8 @@ export default {
 </script>
 
 <style>
+button {
+  background-color: gray;
+}
 
 </style>

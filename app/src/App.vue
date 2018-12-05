@@ -2,8 +2,8 @@
   <div id="app">
     <header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/movies">Movies</RouterLink>
+        <RouterLink class="Home" to="/">Home</RouterLink>
+        <RouterLink class="Movies" to="/movies">Movies</RouterLink>
       </nav>
     </header>
     <main>
@@ -24,11 +24,26 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Playfair Display SC', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
   margin-top: 60px;
+  box-sizing: border-box;
+  text-align: center;
+}
+nav {
+  display:flex;
+  margin: 10px;
+  justify-content: space-around;
+}
+.Home {
+  color: white;
+  font-size: 1.2rem;
+}
+.Movies {
+  color: white;
+  font-size: 1.2rem;
 }
 </style>
