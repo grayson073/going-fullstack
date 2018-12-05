@@ -4,8 +4,8 @@
 
     <ul v-if="singers">
       <li v-for="singer in singers" :key="singer.id">
-        {{singer.name}} - 
-        {{singer.genre}}
+        <p class="singer-name"> {{singer.name}}</p>
+        <p class="singer-genre">{{singer.genre}}</p>
       </li>
     </ul>
 
@@ -50,6 +50,23 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+li {
+    list-style-type: none;
+    margin-bottom: 25px;
+}
+
+.singer-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.singer-genre {
+    font-size: .8em;
+    margin: 0;
+    padding: 0;
+}
 
 </style>
 
