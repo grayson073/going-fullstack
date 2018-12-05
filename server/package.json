@@ -21,6 +21,7 @@
   "description": "",
   "dependencies": {
     "express": "^4.16.4",
+    "pg": "^7.7.1",
     "shortid": "^2.2.14"
   },
   "devDependencies": {
