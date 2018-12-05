@@ -9,11 +9,12 @@ client.connect()
   .then(() => {
     return Promise.all(
       guitarists.map(guitarist => {
+        console.log(guitarist.alive);
         return client.query(`
-          INSERT INTO guitarists (name, type, yob)
-          VALUES ($1, $2, $3);
+          INSERT INTO guitarists (name, type, yob, alive)
+          VALUES ($1, $2, $3, $4);
         `,
-        [guitarist.name, guitarist.type, guitarist.yob]);
+        [guitarist.name, guitarist.type, guitarist.yob, guitarist.alive]);
       })
     );
   })

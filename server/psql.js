@@ -8,7 +8,7 @@ const client = new Client(databaseUrl);
 client.connect();
 
 client.query(`
-  SELECT name, type, yob FROM guitarists;
+  SELECT name, type, yob, alive FROM guitarists;
 `)
   .then(
     results => {

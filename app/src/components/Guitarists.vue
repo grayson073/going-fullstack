@@ -33,6 +33,13 @@ export default {
   },
   methods: {
     handleAdd(guitarist) {
+      guitarist.yob = parseInt(guitarist.yob);
+      if(guitarist.alive === 'true') {
+        guitarist.alive = true;
+      }
+      else {
+        guitarist.alive = false;
+      }
       return api.addGuitarist(guitarist)
         .then(saved => {
           this.guitarists.push(saved);

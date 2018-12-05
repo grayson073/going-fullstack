@@ -7,6 +7,9 @@
     <p>
       Year of birth: {{guitarist.yob}}
     </p>
+    <p>
+      Alive: {{guitarist.alive}}
+    </p>
   </section>
 </template>
 
@@ -28,5 +31,7 @@ export default {
 </script>
 
 <style scoped>
-
+h2, p {
+    text-align: center;
+}
 </style>

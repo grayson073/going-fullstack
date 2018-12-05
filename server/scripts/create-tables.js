@@ -11,7 +11,8 @@ client.connect()
         id SERIAL PRIMARY KEY,
         name VARCHAR(256) NOT NULL,
         type VARCHAR(256),
-        yob INT
+        yob INT,
+        alive BOOLEAN
       );
     `);
   })
