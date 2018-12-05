@@ -5,13 +5,13 @@ const shortid = require('shortid');
 const fs = require('fs');
 
 function readData() {
-  const data = fs.readFileSync('./data/books.json', 'utf8');
+  const data = fs.readFileSync('./scripts/books.json', 'utf8');
   return JSON.parse(data);
 }
 
 function saveData(books) {
   const json = JSON.stringify(books, true, 2);
-  fs.writeFileSync('./data/books.json', json);
+  fs.writeFileSync('./scripts/books.json', json);
 }
 
 app.use(express.json());
