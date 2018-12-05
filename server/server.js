@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const pg = require('pg');
-const shortid = require('shortid');
 
 // const fs = require('fs');
 
@@ -21,11 +20,19 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 const Client = pg.Client;
-const dbUrl = 'postgress://localhost:5432/animal';
+const dbUrl = 'postgres://localhost:5432/animal';
 const client = new Client(dbUrl);
 client.connect();
 
-// app.get('/api/animals', (req, res) => {
+app.get('/api/animals', (req, res) => {
+
+  client.query(`
+    SELECT id, name FROM animals;
+  `)
+    .then(result => {
+      res.json(result.rows);
+    });
+});
 //   const animals = readData();
 //   if(req.query.name) {
 //     const match = req.query.name.toLowerCase();
