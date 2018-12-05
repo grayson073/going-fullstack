@@ -1,5 +1,32 @@
-{
-  "name": "Billy",
-  "genre": "Classical",
-  "id": "EAyUo-oJz"
-}
+[
+  {
+    "name": "Bob Marley",
+    "genre": "Rasta",
+    "id": "XXXXXXXXX"
+  },
+  {
+    "name": "Kristin Hersh",
+    "genre": "Alternative",
+    "id": "YYYYYYYYY"
+  },
+  {
+    "name": "tim",
+    "genre": "what",
+    "id": "pXQoQIzrj"
+  },
+  {
+    "name": "jane",
+    "genre": "hall",
+    "id": "5wPGZXCzr"
+  },
+  {
+    "name": "Woo",
+    "genre": "Yeah",
+    "id": "uSwGGYdQ4"
+  },
+  {
+    "name": "New",
+    "genre": "Super",
+    "id": "afPGkDBA2"
+  }
+]

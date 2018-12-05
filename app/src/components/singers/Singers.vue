@@ -1,15 +1,16 @@
 <template>
   <section class="singers">
     <h2>The Singers</h2>
-    
-    <AddSinger :onAdd="handleAdd"/>
 
     <ul v-if="singers">
       <li v-for="singer in singers" :key="singer.id">
-        {{singer.name}}
+        {{singer.name}} - 
         {{singer.genre}}
       </li>
     </ul>
+
+    <AddSinger :onAdd="handleAdd"/>
+    
   </section>
 </template>
 

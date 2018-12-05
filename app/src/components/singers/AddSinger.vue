@@ -26,8 +26,7 @@ export default {
           this.singer = { 
             name: '',
             genre: ''
-            };
-
+          };
         });
     }
   }

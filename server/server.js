@@ -50,7 +50,7 @@ app.post('/api/singers', (req, res) => {
   singer.id = shortid.generate();
   // singer.created = new Date();
   singers.push(singer);
-  saveData(singer);
+  saveData(singers);
 
   res.json(singer);
 });

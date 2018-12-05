@@ -22,7 +22,7 @@ export default {};
 
 header {
   height: 75px;
-  background: lightsteelblue;
+  background: lightseagreen;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,10 +34,10 @@ header img {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: white;
   margin: 3px;
   padding: 3px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 main {
