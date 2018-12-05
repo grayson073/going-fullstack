@@ -2,13 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "pretest": "npm run lint",  
+    "test": "exit 0",
     "start": "nodemon server.js",
     "build": "npm run vue-build && rm -rf ../server/public && cp -R ./dist ../server/public"
   },
-  "author": "",
+  "author": "Carmen Ramos",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.9.0",
