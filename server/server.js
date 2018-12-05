@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 const fs = require('fs');
 
 function readData() {
@@ -9,9 +10,9 @@ function readData() {
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/api/books', (req, res) => {
   const books = readData();
-  console.log(books);
+  res.json(books);
 });
 
 // this should go at the bottom //
