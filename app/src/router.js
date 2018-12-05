@@ -6,7 +6,7 @@ export default new VueRouter({
 
   routes: [
     { path: '/', component: Home },
-    { path: '/students', component: Articles },
+    { path: '/articles', component: Articles },
     { path: '*', redirect: '/' }
   ]
 });
