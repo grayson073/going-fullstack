@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const shortid = require('shortid');
+const morgan = require('morgan');
 
 const fs = require('fs');
 
@@ -13,6 +14,8 @@ function saveData(synths) {
   const json = JSON.stringify(synths, true, 2);
   fs.writeFileSync('./data/synths.json', json);
 }
+
+app.use(morgan('dev'));
 
 // utility that check requests, if body turn into JSON and ready it for us
 app.use(express.json());
