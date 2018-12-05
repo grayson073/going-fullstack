@@ -8,7 +8,7 @@
     "test": "exit 0",
     "start": "nodemon server.js"
   },
-  "author": "Marty Nelson <marty@martypdx.com>",
+  "author": "Phoebe LaBlonde <plablonde@email.arizona.edu>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",

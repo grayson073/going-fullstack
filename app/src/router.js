@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router';
-import Home from './src/components/Home.vue';
-import Books from './src/components/books/Books.vue';
+import Home from './components/Home.vue';
+import Books from './components/books/Books.vue';
 
 
 export default new VueRouter({
