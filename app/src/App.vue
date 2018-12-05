@@ -1,11 +1,21 @@
 <template>
   <div id="app">
+    Hello!
+    <header>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+      </nav>
+    </header>
+
+    <main>
+      <RouterView></RouterView>
+    </main>
   </div>
 </template>
 
 <script>
 
-export default {}
+export default {};
 </script>
 
 <style>
