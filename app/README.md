@@ -1,29 +1,12 @@
-# app
+# Going FullStack app
 
-## Project setup
-```
-npm install
-```
+### by Cari Palazzolo @caripizza
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Description
+This VueJS app employs a server to display a list of vintage synthesizers. It also includes a form to add new synths to the site.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Technologies Used
+Vue CLI, Express, JavaScript, HTML, CSS
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Sources
+Vintage Synth Explorer: http://www.vintagesynth.com/
