@@ -30,7 +30,7 @@ export default {
   created() {
     api.getBooks()
       .then(books => {
-          console.log(books);
+      // console.log(books);
         this.books = books;
       })
       .catch(err => {
@@ -41,7 +41,7 @@ export default {
     handleAdd(book) {
       return api.addBook(book)
         .then(saved => {
-          this.books.push(saved);        //book?  
+          this.books.push(saved);    
         });
     }
   }

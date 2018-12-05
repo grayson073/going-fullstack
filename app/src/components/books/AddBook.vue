@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="handleSubmit">
-        <input v-model="book.name" require>
-        <button>Add</button>
+        <input v-model="book.title" required>
+        <button>Add Title</button>
     </form>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   methods: {
     handleSubmit() {
       this.onAdd(this.book)
-        .this(() => {
+        .then(() => {
           this.book = { title: '' };
         });
     }
