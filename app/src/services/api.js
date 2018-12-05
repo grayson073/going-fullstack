@@ -12,7 +12,7 @@ export default {
       header: {
         'Content-Type': 'application/json'
       },
-      body: emoji
+      body: JSON.stringify(emoji)
     })
       .then(response => response.json());
   }

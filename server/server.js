@@ -24,10 +24,9 @@ app.get('/api/emojis', (req, res) => {
 app.post('/api/emojis', (req, res) => {
   const emojis = readData();
   const emoji = req.body;
-  emoji.id = shortid.generate();
+  console.log('req', req);
   console.log('server emoji', emoji);
-  // emoji.image = "https://www.littledayout.com/wp-content/uploads/articles/2017/07-July/20170715-WorldEmojiDay/DabEmoji.jpg";
-
+  emoji.id = shortid.generate();
   emojis.push(emoji);
   saveData(emojis);
 
