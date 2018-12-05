@@ -1,5 +1,3 @@
-// console.log('this is a cool test');
-
 const express = require('express');
 const app = express();
 const shortid = require('shortid');
@@ -35,11 +33,9 @@ app.get('/api/synths', (req, res) => {
 
 
 app.post('/api/synths', (req, res) => {
-  // console.log('POST synths received', req.body);
   const synths = readData();
   const synth = req.body;
   synth.id = shortid.generate();
-  // synth.created = new Date();
   synths.push(synth);
   saveData(synths);
   res.json(synth);

@@ -1,7 +1,27 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input v-model="synth.name">
-    <button>Add</button>
+    <fieldset>
+    <label>
+    Synth name: <input v-model="synth.name" required>
+    </label>
+    <br>
+    <label>
+      Image url: <input v-model="synth.image">
+    </label>
+    <br>
+    <label>
+    Polyphonic?
+      Yes:<input type="radio" v-model="synth.polyphonic" v-bind:value="true">
+      No:<input type="radio" v-model="synth.polyphonic" v-bind:value="false">
+    </label>
+    <br>
+    <label>
+      Date produced: <input v-model.number="synth.year" required>
+    </label>
+    <p>
+      <button>Add</button>
+    </p>
+    </fieldset>
   </form>
 </template>
 
@@ -13,7 +33,10 @@ export default {
   data() {
     return {
       synth: {
-        name: ''
+        name: '',
+        image: '',
+        polyphonic: '',
+        year: ''
       }
     };
   },
@@ -29,5 +52,9 @@ export default {
 </script>
 
 <style>
-
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 </style>

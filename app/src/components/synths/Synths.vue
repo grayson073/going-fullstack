@@ -4,7 +4,10 @@
     <AddSynth :onAdd="handleAdd"/>
     <ul v-if="synths">
       <li v-for="synth in synths" :key="synth.id">
-        {{synth.name}}
+        <h3>{{synth.name}}</h3>
+        <p>Polyphonic? {{synth.polyphonic}}</p>
+        <p>Date produced: {{synth.year}}</p>
+        <img :src="synth.image">
       </li>
     </ul>
   </section>
@@ -37,7 +40,6 @@ export default {
     handleAdd(synth) {
       return api.addSynth(synth)
         .then(saved => {
-          // console.log('we just saved', saved);
           this.synths.push(saved);
         });
     }
@@ -46,5 +48,19 @@ export default {
 </script>
 
 <style>
-
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+h3 {
+  margin: 0;
+}
+img {
+  width: 150px;
+}
+p {
+  margin: 0;
+}
 </style>
