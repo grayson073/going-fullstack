@@ -33,6 +33,20 @@ app.get('/api/animals', (req, res) => {
       res.json(result.rows);
     });
 });
+
+app.post('/api/animals', (req, res) => {
+  const body = req.body;
+
+  client.query(`
+    INSERT INTO animals (name, weight, mammal)
+    VALUES ($1, $2, $3)
+    RETURNING id, name, weight, mammal
+  `,
+  [body.name, body.weight, body.mammal])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
 //   const animals = readData();
 //   if(req.query.name) {
 //     const match = req.query.name.toLowerCase();
