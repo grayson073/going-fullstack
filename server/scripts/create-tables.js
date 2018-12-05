@@ -1,7 +1,5 @@
 const pg = require('pg');
-// Use the pg Client
 const Client = pg.Client;
-// database url
 const databaseUrl = 'postgres://localhost:5432/guitarists';
 
 const client = new Client(databaseUrl);
@@ -13,7 +11,7 @@ client.connect()
         id SERIAL PRIMARY KEY,
         name VARCHAR(256) NOT NULL,
         music_type VARCHAR(256),
-        yob INTEGER
+        yob INT
       );
     `);
   })

@@ -1,47 +1,55 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const pg = require('pg');
 
-const fs = require('fs');
-
-function readData() {
-  const data = fs.readFileSync('./data/guitarists.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(guitarists) {
-  const json = JSON.stringify(guitarists, true, 2);
-  fs.writeFileSync('./data/guitarists.json', json);
-}
-
-app.use(express.json());
 app.use(morgan('dev'));
+app.use(express.json());
+
+const Client = pg.Client;
+const dbUrl = 'postgres://localhost:5432/guitarists';
+const client = new Client(dbUrl);
+client.connect();
+
+
 
 app.get('/api/guitarists', (req, res) => {
-  const guitarists = readData();
-
-  if(req.query.name) {
-    const match = req.query.name.toLowerCase();
-    const filtered = guitarists.filter(s => {
-      return s.name.toLowerCase().startsWith(match);
+  client.query(`
+    SELECT id, name FROM guitarists;
+  `)
+    .then(result => {
+      res.json(result.rows);
     });
-    res.json(filtered);
-  }
-  else {
-    res.json(guitarists);
-  }
+
+});
+
+app.get('/api/guitarists/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM guitarists WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 app.post('/api/guitarists', (req, res) => {
-  const guitarists = readData();
-  const guitarist = req.body;
+  const body = req.body;
 
-  guitarists.push(guitarist);
-  saveData(guitarists);
-
-  res.json(guitarist);
+  client.query(`
+    INSERT INTO guitarists (name, music_type, track, yob)
+    VALUES($1, $2, $3)
+    RETURNING id, name, music_type as "musicType", yob;
+  `,
+  [body.name, body.musicType, body.yob])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
+/* end defined routes */
+
+/* configure and start the server */
 const PORT = 3000;
 
 app.listen(PORT, () => {
