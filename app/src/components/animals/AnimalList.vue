@@ -3,6 +3,7 @@
       <li v-for="animal in animals" :key="animal.id">
         <RouterLink :to="`/animals/${animal.id}`">{{animal.name}}</RouterLink>
         <img v-bind:src="animal.image"/>
+        <p>animal pic test{{animal.image}}</p>
       </li>
     </ul>
 </template>

@@ -14,7 +14,7 @@ client.connect()
         name VARCHAR(256) NOT NULL,
         weight INT,
         mammal BOOLEAN,
-        image TEXT
+        image VARCHAR(256)
       );
     `);
   })

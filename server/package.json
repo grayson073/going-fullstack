@@ -7,6 +7,7 @@
     "start": "nodemon server.js",
     "create-tables": "node scripts/create-tables.js",
     "drop-tables": "node scripts/drop-tables.js",
+    "load-seed-data": "node scripts/load-seed-data.js",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "exit 0"

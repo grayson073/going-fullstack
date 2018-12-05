@@ -16,7 +16,7 @@ client.query(`
   .then(
     results => {
       fs.writeFileSync(
-        'animal.json', 
+        'animals.json', 
         JSON.stringify(results.rows, true, 2)
       );
     },
