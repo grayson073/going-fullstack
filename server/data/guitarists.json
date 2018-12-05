@@ -25,17 +25,14 @@
   },
   {
     "name": "John Williams",
+    "yob": 1941,
     "musicType": "Classical",
     "id": "BCaZPI09L"
   },
   {
     "name": "The Edge",
+    "yob": 1961,
     "musicType": "Pop",
     "id": "mK9fv-CAK"
-  },
-  {
-    "name": "Rose",
-    "musicType": "Heavy Metal",
-    "id": "RXTvdIeKy"
   }
 ]
