@@ -6,6 +6,7 @@
       <li v-for="singer in singers" :key="singer.id">
         <p class="singer-name"> {{singer.name}}</p>
         <p class="singer-genre">{{singer.genre}}</p>
+        <p class="singer-genre">Age: {{singer.age}}</p>
       </li>
     </ul>
 

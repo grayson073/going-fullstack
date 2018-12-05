@@ -1,17 +1,20 @@
 [
   {
-    "name": "Bob Marley",
-    "genre": "Rasta",
-    "id": "XXXXXXXXX"
-  },
-  {
     "name": "Kristin Hersh",
     "genre": "Alternative",
+    "age": 52,
     "id": "YYYYYYYYY"
   },
   {
-    "name": "David Bowie",
+    "name": "David Lee Roth",
     "genre": "Rock",
+    "age": 58,
     "id": "2XCNW_za7"
+  },
+  {
+    "name": "Lordes",
+    "genre": "Pop",
+    "age": "22",
+    "id": "o_nCGZrea"
   }
 ]

@@ -3,6 +3,7 @@
     <p class="add-title">Add your favorite singer:</p>
     <span>Name: <input v-model="singer.name"></span>
     <span>Genre: <input v-model="singer.genre"></span>
+    <span>Age: <input v-model="singer.age"></span>
     <button>Add</button>
   </form>
 </template>
@@ -17,6 +18,7 @@ export default {
       singer: {
         name: '',
         genre: '',
+        age: undefined
       }
     };
   },
@@ -26,7 +28,8 @@ export default {
         .then(() => {
           this.singer = { 
             name: '',
-            genre: ''
+            genre: '',
+            age: undefined
           };
         });
     }
@@ -38,8 +41,9 @@ export default {
   form {
     margin-top: 30px;
     background: lightgoldenrodyellow;
-    padding: 15px;
+    padding: 0px 15px 15px 15px;
     border: 2px solid darkgoldenrod;
+    width: 700px;
   }
 
   span {
