@@ -1,7 +1,7 @@
 <template>
     <section>
         <h2>Movies</h2>
-        <!-- <AddMovie :onAdd="handleAdd"/> -->
+        <AddMovie :onAdd="handleAdd"/>
 
         <ul v-if="movies">
             <li v-for="movie in movies" :key="movie.year">
@@ -14,6 +14,7 @@
 
 <script>
 import api from '../services/api.js';
+import AddMovie from './AddMovie';
 
 export default {
   data() {
@@ -21,11 +22,25 @@ export default {
       movies: null,
     };
   },
+  components: {
+    AddMovie
+  },
   created() {
     api.getMovies()
       .then(movies => {
         this.movies = movies;
+      })
+      .catch(err => {
+        this.error = err;
       });
+  },
+  methods: {
+    handleAdd(movie) {
+      return api.addMovie(movie)
+        .then(saved => {
+          this.movies.push(saved);
+        });
+    }
   }
 };
 </script>
