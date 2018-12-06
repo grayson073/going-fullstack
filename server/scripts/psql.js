@@ -4,7 +4,7 @@ const pg = require('pg');
 
 const Client = pg.Client;
 
-const databaseUrl = 'postgres://postgress:Stitch32@localhost:5432/books';
+const databaseUrl = 'postgres://postgres:Stitch32.@localhost:5432/books';
 
 const client = new Client(databaseUrl);
 

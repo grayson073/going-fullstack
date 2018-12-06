@@ -2,7 +2,7 @@ const pg = require('pg');
 
 const Client = pg.Client;
 
-const databaseUrl = 'postres://postgres:Stitch32@localhost:5432/books';
+const databaseUrl = 'postres://postgres:Stitch32.@localhost:5432/books';
 
 const client = new Client(databaseUrl);
 
