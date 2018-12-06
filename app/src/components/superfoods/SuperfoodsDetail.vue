@@ -12,6 +12,7 @@
 
 <script>
 import api from '../../services/api';
+
 export default {
   data() {
     return {
@@ -28,4 +29,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-size: 1.15em;
+  font-weight: bolder;
+  color: green;
+}
 </style>

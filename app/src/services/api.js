@@ -5,6 +5,11 @@ export default {
       .then(response => response.json());      
   },
 
+  getSuperfood(id) {
+    return fetch(`/api/superfoods/${id}`)
+      .then(response => response.json());
+  },
+
   addSuperfood(superfood) {
     return fetch('/api/superfoods', {
       method: 'POST',
