@@ -1,7 +1,7 @@
 <template>
     <ul v-if="movies">
         <li v-for="movie in movies" :key="movie.id">
-            <RouterLink :to="`/movies/${movie.id}`"> {{movie.name}} </RouterLink>
+            <RouterLink class="list" :to="`/movies/${movie.id}`"> {{movie.name}} </RouterLink>
         </li>
     </ul>
 </template>
@@ -15,5 +15,9 @@ export default {
 </script>
 
 <style>
+    .list {
+        text-decoration: none;
+        color: white;
+    }
 
 </style>

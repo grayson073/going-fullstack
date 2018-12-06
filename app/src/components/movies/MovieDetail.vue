@@ -16,7 +16,7 @@ import api from '../services/api';
 export default {
   data() {
     return {
-      movie:null
+      movie: null
     };
   },
   created() {
