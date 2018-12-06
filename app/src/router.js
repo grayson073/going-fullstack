@@ -7,7 +7,7 @@ export default new VueRouter({
   routes: [
     { path: '/', component: Home },
     { path: '/movies', component: Movies },
-    { path: '/movies/:id', component: MovieDetail },
+    { path: '/movie/:id', component: MovieDetail },
     { path: '*', redirect: '/' }
   ]
 });

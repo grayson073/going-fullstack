@@ -14,27 +14,29 @@
 </template>
 
 <script>
-// import api from '../services/api';
 
-// function initMovie
+
+function initMovie() {
+  return {
+    name: '',
+    genre: '',
+    year: ''
+  };
+}
 export default {
   props: {
     onAdd: Function
   },
   data() {
     return {
-      movie: {
-        name: '',
-        // year: '',
-        // genre: ''
-      }
+      movie: initMovie (),
     };
   },
   methods: {
     handleSubmit() {
       this.onAdd(this.movie)
         .then(() => {
-          this.movie = { name: '' };
+          this.movie = initMovie();
         });
     }
   }
