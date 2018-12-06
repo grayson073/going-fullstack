@@ -3,6 +3,10 @@ export default {
     return fetch('/api/synths')
       .then(response => response.json());
   },
+  getSynth(id) {
+    return fetch(`/api/synths/${id}`)
+      .then(response => response.json());
+  },
   addSynth(synth) {
     return fetch('/api/synths', {
       method: 'POST',

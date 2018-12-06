@@ -18,7 +18,7 @@ app.get('/api/synths', (req, res) => {
   // TODO: reimplement queries
   // if(req.query.name) {
   client.query(`
-      SELECT name, image, polyphonic, year FROM synths;
+      SELECT name, image, polyphonic, year, id FROM synths;
     `)
     .then(result => {
       res.json(result.rows);
@@ -29,9 +29,9 @@ app.get('/api/synths', (req, res) => {
 app.post('/api/synths', (req, res) => {
   const body = req.body;
   client.query(`
-    INSERT INTO synths (name, image, polyphonic, year)
-    VALUES ($1, $2, $3, $4)
-    RETURNING name, image, polyphonic, year;
+    INSERT INTO synths (name, image, polyphonic, year, id)
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING name, image, polyphonic, year, id;
   `,
   [body.name, body.image, body.polyphonic, body.year])
     .then(result => {
