@@ -2,7 +2,7 @@
   <section v-if="synth">
     <h2>{{synth.name}}</h2>
     <p>
-      Polyphonice? {{synth.polyphonic}}
+      Polyphonic? {{synth.polyphonic}}
     </p>
     <p>
       Date produced: {{synth.year}}

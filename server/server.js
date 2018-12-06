@@ -14,9 +14,8 @@ const databaseUrl = 'postgres://localhost:5432/synthesizers';
 const client = new Client(databaseUrl);
 client.connect();
 
+
 app.get('/api/synths', (req, res) => {
-  // TODO: reimplement queries
-  // if(req.query.name) {
   client.query(`
       SELECT name, image, polyphonic, year, id FROM synths;
     `)
@@ -35,12 +34,18 @@ app.get('/api/synths/:id', (req, res) => {
     });
 });
 
+//TODO: app.del('/api/synths/:id, (req, res) => {
+//   similar to get but just a delete sql statement
+//    DELETE * FROM synths WHERE id = $1;
+// })
+// ^ but if in UI and delete, program app to go back to list ???
+// TODO: edit - put with an update
 
 app.post('/api/synths', (req, res) => {
   const body = req.body;
   client.query(`
-    INSERT INTO synths (name, image, polyphonic, year, id)
-    VALUES ($1, $2, $3, $4, $5)
+    INSERT INTO synths (name, image, polyphonic, year)
+    VALUES ($1, $2, $3, $4)
     RETURNING name, image, polyphonic, year, id;
   `,
   [body.name, body.image, body.polyphonic, body.year])

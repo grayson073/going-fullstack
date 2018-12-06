@@ -25,41 +25,48 @@
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/korg_ms2000.jpg",
     "polyphonic": true,
     "year": 2000,
-    "id": "4buE1e7GE"
+    "id": "4"
   },
   {
     "name": "Casio CT-401",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/casio_ct401.jpg",
     "polyphonic": true,
     "year": 1981,
-    "id": "RoTuU2t3_"
+    "id": "5"
   },
   {
     "name": "Crumar Stratus",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/crumar_stratus_2.jpg",
     "polyphonic": true,
     "year": 1982,
-    "id": "WHTQ4O7VG"
+    "id": "6"
   },
   {
     "name": "Roland Jupiter-6",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/roland_jupiter6.jpg",
     "polyphonic": true,
     "year": 1983,
-    "id": "7BfxgUTwr"
+    "id": "7"
   },
   {
     "name": "Moog Opus-3",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/moog_opus3_angle.jpg",
     "polyphonic": true,
     "year": 1980,
-    "id": "vUisAfEn0"
+    "id": "8"
   },
   {
     "name": "Yamaha CS-5",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/cs5.jpg",
     "polyphonic": false,
     "year": 1978,
-    "id": "CLwvwV2OI"
+    "id": "9"
+  },
+  {
+    "name": "Moog Minimoog",
+    "image": "http://www.vintagesynth.com/sites/default/files/2017-05/moog_minimoogd.jpg",
+    "polyphonic": false,
+    "year": 1970,
+    "id": "10"
   }
 ]
