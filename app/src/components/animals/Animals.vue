@@ -1,6 +1,6 @@
 <template>
   <section class="animals">
-    <h2>Animals</h2>
+    <h2>Animal List</h2>
     <AddAnimal v-bind:onAdd="handleAdd"/>
     <AnimalList v-bind:animals="animals"/>
   </section> 
