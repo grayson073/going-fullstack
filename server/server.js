@@ -14,8 +14,6 @@ function saveData(animals) {
   fs.writeFileSync('./data/animals.json', json);
 }
 
-app.use(morgan('dev'));
-
 app.use(express.json());
 
 app.get('/api/animals', (req, res) => {
