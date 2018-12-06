@@ -16,5 +16,12 @@ export default {
       body: JSON.stringify(synth)
     })
       .then(response => response.json());
+  },
+  deleteSynth(id) {
+    console.log(id);
+    return fetch(`/api/synths/${id}`, {
+      method: 'DELETE'
+    })
+      .then(response => response.json());
   }
 };

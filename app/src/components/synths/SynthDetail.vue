@@ -12,6 +12,7 @@
     <p>
       <img :src="synth.image">
     </p>
+    <button @click="handleDelete">Delete</button>
   </section>
 </template>
 
@@ -29,6 +30,14 @@ export default {
       .then(synth => {
         this.synth = synth;
       });
+  },
+  methods: {
+    handleDelete() {
+      api.deleteSynth(this.synth.id)
+        .then(() => {
+          this.$router.push('/synths');
+        });
+    }
   }
 };
 </script>
