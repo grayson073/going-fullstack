@@ -6,7 +6,7 @@
 
         <ul v-if="emojis">
           <li v-for="emoji in emojis" :key="emoji.id">
-            <h3>{{emoji.name}}</h3>
+            <RouterLink :to="`/emojis/${emoji.id}`"><h3>{{emoji.name}}</h3></RouterLink>
             <img :src="emoji.image">
           </li>
 

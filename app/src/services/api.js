@@ -5,6 +5,10 @@ export default {
       .then(response => response.json());
   },
 
+  getEmoji(id) {
+    console.log(id);
+  },
+
   addEmoji(emoji) {
     console.log('api emoji', emoji);
     return fetch('/api/emojis', {
