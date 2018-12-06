@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Harry Potter",
+    "age": 38,
+    "cool": true,
+    "id": "hp"
+  },
+  {
+    "name": "Hermione Granger",
+    "age": 38,
+    "cool": true,
+    "id": "hg"
+  },
+  {
+    "name": "Ron Weasley",
+    "age": 39,
+    "cool": false,
+    "id": "rw"
+  }
+]
