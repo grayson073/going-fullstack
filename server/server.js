@@ -1,16 +1,11 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const pg = require('pg');
+const client = require('./db-client');
 
 app.use(morgan('dev'));
 
 app.use(express.json());
-
-const Client = pg.Client;
-const dbUrl = 'postgres://localhost:5432/animal';
-const client = new Client(dbUrl);
-client.connect();
 
 app.get('/api/animals', (req, res) => {
 
@@ -55,7 +50,6 @@ app.delete('/api/animals/:id', (req, res) => {
       res.json({ removed:result.rowCount === 1 });
     });
 });
-
 
 const PORT = 3000;
 

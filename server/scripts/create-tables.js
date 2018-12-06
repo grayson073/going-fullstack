@@ -1,14 +1,6 @@
-const pg = require('pg');
+const client = require('../db-client');
 
-const Client = pg.Client;
-
-const databaseUrl = 'postgres://localhost:5432/animal';
-
-const client = new Client(databaseUrl);
-
-client.connect()
-  .then(() => {
-    return client.query(`
+client.query(`
       CREATE TABLE IF NOT EXISTS animals (
         id SERIAL PRIMARY KEY,
         name VARCHAR(256) NOT NULL,
@@ -16,8 +8,8 @@ client.connect()
         mammal BOOLEAN,
         image VARCHAR(256)
       );
-    `);
-  })
+    `)
+  
   .then(
     () => console.log('create tables complete'),
     err => console.log(err)
