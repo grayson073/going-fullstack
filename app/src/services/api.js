@@ -5,10 +5,10 @@ export default {
   },
 
   getBook(id) {
-    return fetch(`/api/students/${id}`)
+    return fetch(`/api/books/${id}`)
       .then(response => response.json());
   },
-  
+
   addBook(book) {
     return fetch('/api/books', {
       method: 'POST',

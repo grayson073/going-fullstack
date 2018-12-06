@@ -13,7 +13,7 @@ app.use(express.json());
 
 /* connect to pg */
 const Client = pg.Client;
-const dbUrl = 'postgres://localhost:5432/books';
+const dbUrl = 'postgres://postgres:Stitch32.@localhost:5432/books';
 const client = new Client(dbUrl);
 client.connect();
 /* end connect pg */

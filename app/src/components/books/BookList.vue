@@ -12,7 +12,7 @@
 <script>
 export default {
   props: {
-    students: null
+    books: null
   }
 };
 </script>

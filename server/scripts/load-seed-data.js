@@ -11,7 +11,7 @@ client.connect()
       books.map(book => {
         return client.query(`
             INSERT INTO  books (title, author, pages, good)
-            VALUES ($), $2, $3, $4);
+            VALUES ($1, $2, $3, $4);
             `,
         [book.title, book.author, book.pages, book.good]);
       })

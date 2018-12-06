@@ -21,16 +21,16 @@
 </template>
 
 <script>
-import api from '../../services/api';
+// import api from '../../services/api';
 
-function initBook = () => {
+function initBook() {
   return {
     title: '',
     author: '',
     pages: '',
     good: Boolean
   };
-};
+}
 
 export default {
   props: {

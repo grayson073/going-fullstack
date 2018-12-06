@@ -16,6 +16,8 @@ import BookList from './BookList';
 export default {
   data() {
     return {
+      books: null,
+      error: null
     };
   },
   components: {
