@@ -10,11 +10,11 @@
         </label>
         <label>
             Year of Birth:
-            <input placeholder="yyyy" v-model="emoji.image" required>
+            <input placeholder="yyyy" v-model="emoji.yob" required>
         </label>
         <label>
             Goodness:
-            <input placeholder="true/false" v-model="emoji.image" required>
+            <input placeholder="true/false" v-model="emoji.goodness" required>
         </label>
         <button>Add</button>
     </form>

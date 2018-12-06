@@ -19,6 +19,19 @@ app.get('/api/emojis', (req, res) => {
     });
 });
 
+app.post('/api/emojis', (req, res) => {
+  const body = req.body;
+
+  client.query(`
+    INSERT INTO emojis (name, image, yob, goodness)
+    VALUES($1, $2, $3, $4)
+    RETURNING id, name, image, yob, goodness;
+  `,
+  [body.name, body.image, body.yob, body.goodness])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
 
 const PORT = 3000;
 
