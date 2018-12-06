@@ -5,8 +5,7 @@
     <AddSuperfood :onAdd="handleAdd"/>
     <ul v-if="superfoods">
       <li v-for="superfood in superfoods" :key="superfood.id">
-        {{superfood.name}}
-        <p>Benefits: {{superfood.benefits}}</p>
+        <p> {{superfood.name}} </p>
       </li>
     </ul>
   </section>
@@ -46,6 +45,14 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+}
+p {
+  font-size: 1.15em;
+  font-weigth: bolder;
+  color: green;
+}
+.superfoods {
+  color: green;
 }
 </style>
 

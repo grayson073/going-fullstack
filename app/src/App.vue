@@ -4,7 +4,7 @@
       <img alt="Superfoods logo" src="./assets/superfoods-logo.png">
       <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/superfoods">SuperFoods</RouterLink>
+      <RouterLink class="title" to="/superfoods">SuperFoods</RouterLink>
       </nav>
     </header>
 
@@ -50,5 +50,8 @@ header {
 }
  main {
   padding: 8px;
+}
+nav .title {
+  color: green;
 }
 </style>
