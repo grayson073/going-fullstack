@@ -1,36 +1,10 @@
 [
   {
+    "id":665,
     "title": "Oryx and Crake",
-    "pub year": 2003,
-    "good": "yes",
-    "id": 665
-  },
-  {
-    "title": "Ulyses",
-    "pub year": 1922,
-    "good": "no",
-    "id": 855
-  },
-  {
-    "title": "Mink River",
-    "pub year": 2014,
-    "good": "yes",
-    "id": 632
-  },
-  {
-    "title": "llkj",
-    "id": "MyNvheNpv"
-  },
-  {
-    "title": "ssldkf ",
-    "id": "gpVwAxth6"
-  },
-  {
-    "title": "wwok lkdf",
-    "id": "OUa92eVJz"
-  },
-  {
-    "title": "wer ddd",
-    "id": "CukjXrBMD"
+    "author": "Margaret Atwood",
+    "pages": 389,
+    "good": "yes"
   }
+ 
 ]
