@@ -6,6 +6,7 @@ client.query(`
         name VARCHAR(256) NOT NULL,
         weight INT,
         mammal BOOLEAN,
+        SIZE VARCHAR(256),
         image VARCHAR(256)
       );
     `)

@@ -7,6 +7,9 @@
         Weight: {{animal.weight}} pounds
       </p>
       <p>
+        Size: {{animal.size}}
+      </p>
+      <p>
         Mammal: {{animal.mammal}}
       </p>
       <button @click="handleDelete">Delete</button>

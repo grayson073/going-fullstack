@@ -10,9 +10,18 @@
 
     <label>Mammal (T/F):
       <select v-model="animal.mammal">
-        <option value="" disabled selected >Select</option>
+        <option value="" disabled>Select</option>
         <option value="true">True</option>
         <option value="false">False</option>
+      </select>
+    </label>
+
+    <label>Size:
+      <select v-model="animal.size">
+        <option value="" disabled>Select</option>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="big">Big</option>
       </select>
     </label>
 
