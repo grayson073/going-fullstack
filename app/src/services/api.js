@@ -11,7 +11,6 @@ export default {
   },
 
   addEmoji(emoji) {
-    console.log('api emoji', emoji);
     return fetch('/api/emojis', {
       method: 'POST',
       headers: {
@@ -20,5 +19,15 @@ export default {
       body: JSON.stringify(emoji)
     })
       .then(response => response.json());
+  },
+
+  deleteEmoji(emoji) {
+    return fetch('/api/emojis/delete', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(emoji)
+    });
   }
 };
