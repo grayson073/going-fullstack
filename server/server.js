@@ -25,6 +25,16 @@ app.get('/api/synths', (req, res) => {
     });
 });
 
+app.get('/api/synths/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM synths WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
+
 
 app.post('/api/synths', (req, res) => {
   const body = req.body;

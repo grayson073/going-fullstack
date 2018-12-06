@@ -14,7 +14,7 @@
 </template>
 
 <script>
-// import api from '../../services/api';
+import api from '../../services/api.js';
 
 export default {
   data() {
@@ -23,11 +23,11 @@ export default {
     };
   },
   created() {
-    console.log('need detail for', this.$route.params.id);
-    // api.getSynth(this.$route.params.id)
-    //   .then(synth => {
-    //     this.synth = synth;
-    //   });
+    // console.log('need detail for', this.$route.params.id);
+    api.getSynth(this.$route.params.id)
+      .then(synth => {
+        this.synth = synth;
+      });
   }
 };
 </script>
