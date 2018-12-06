@@ -1,19 +1,15 @@
 <template>
   <section class="superfoods">
     <h2>Superfoods</h2>
-
     <AddSuperfood :onAdd="handleAdd"/>
-    <ul v-if="superfoods">
-      <li v-for="superfood in superfoods" :key="superfood.id">
-        <p> {{superfood.name}} </p>
-      </li>
-    </ul>
+    <SuperfoodsList :superfoods="superfoods"/>
   </section>
 </template>
 
 <script>
 import api from '../../services/api';
 import AddSuperfood from './AddSuperfood';
+import SuperfoodsList from './SuperfoodsList';
 export default {
   data() {
     return {
@@ -21,7 +17,8 @@ export default {
     };
   },
   components: {
-    AddSuperfood
+    AddSuperfood,
+    SuperfoodsList
   },
   created() {
     api.getSuperfoods()

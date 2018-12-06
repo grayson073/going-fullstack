@@ -1,0 +1,31 @@
+<template>
+  <section v-if="superfood">
+    <h2>{{superfood.name}}</h2>
+    <p>
+     Benefits:  {{superfood.benefits}}
+    </p>
+    <p>
+     Is Anti-Inflammatory: {{superfood.is_anti_inflammatory}}
+    </p>
+  </section>
+</template>
+
+<script>
+import api from '../../services/api';
+export default {
+  data() {
+    return {
+      superfood: null
+    };
+  },
+  created() {
+    api.getSuperfood(this.$route.params.id)
+      .then(superfood => {
+        this.superfood = superfood;
+      });
+  }
+};
+</script>
+
+<style scoped>
+</style>
