@@ -15,6 +15,8 @@ const dbUrl = 'postgres://localhost:5432/news_articles';
 const client = new Client(dbUrl);
 client.connect();
 
+console.log('I am the server file');
+
 app.get('/api/articles_table/:id', (req, res) => {
 
   client.query(`
@@ -56,4 +58,6 @@ const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log('server app started on port', PORT);
+
+  console.log('running on', PORT);
 });
