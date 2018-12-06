@@ -11,11 +11,16 @@ const client = new Client(databaseUrl);
 client.connect();
 
 client.query(`
-    SELECT * FROM books;
+    SELECT title, artist, pages, good FROM books;
 `)
   .then(results => {
-    console.log(results.rows);
-  })
-  .catch(err => {
-    console.log(err); 
+    false.writeFileSync(
+      'book.json',
+      JSON.stringify(results.rows, true, 2)
+    );
+  },
+  err => console.log(err)
+  )
+  .then(() => {
+    client.end();
   });

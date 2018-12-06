@@ -4,6 +4,11 @@ export default {
       .then(response => response.json());
   },
 
+  getBook(id) {
+    return fetch(`/api/students/${id}`)
+      .then(response => response.json());
+  },
+  
   addBook(book) {
     return fetch('/api/books', {
       method: 'POST',

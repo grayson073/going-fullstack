@@ -23,7 +23,7 @@
 <script>
 import api from '../../services/api';
 
-const initBook = () => {
+function initBook = () => {
   return {
     title: '',
     author: '',

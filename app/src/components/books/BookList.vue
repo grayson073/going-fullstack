@@ -2,7 +2,9 @@
     <ul v-if="books">
         <li v-for="book in books"
             :key="book.id">
-            {{book.title}}
+                <RouterLink :to="`/books/${book.id}`">
+                {{book.title}}
+                </RouterLink>
         </li>
     </ul>
 </template>
