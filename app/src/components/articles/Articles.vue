@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       articles: null,
-      error: null
+      // error: null
     };
   },
   components: {
@@ -31,10 +31,10 @@ export default {
     api.getArticles()
       .then(articles => {
         this.articles = articles;
-      })
-      .catch(err => {
-        this.error = err;
       });
+    // .catch(err => {
+    //   this.error = err;
+    // });
   },
   methods: {
     handleAdd(article) {

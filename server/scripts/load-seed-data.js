@@ -20,7 +20,7 @@ client.connect()
   })
   .then(
     () => console.log('seed data load complete'),
-    err => console.log(err)
+    // err => console.log(err)
   )
   .then(() => {
     client.end();

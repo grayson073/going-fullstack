@@ -21,7 +21,7 @@ client.connect()
   })
   .then(
     () => console.log('create tables complete'),
-    err => console.log(err)
+    // err => console.log(err)
   )
   .then(() => {
     client.end();
