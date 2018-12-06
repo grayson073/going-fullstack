@@ -18,6 +18,7 @@ export default {
     created() {
         api.getGrappler(this.$route.params.id)
             .then(grappler => {
+                console.log('banana', grappler);
                 this.grappler = grappler;
             });
     }
