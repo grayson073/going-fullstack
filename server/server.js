@@ -55,18 +55,16 @@ app.post('/api/singers', (req, res) => {
     });
 });
 
-//WIP delete functionality
-app.delete('/api/singers', (req, res) => {
-  const body = req.body;
+//WIP delete functionality`
+// app.delete('/api/singers', (req, res) => {
+//   const body = req.body;
 
-  client.query(`
-    DELETE FROM singers
-    WHERE id = $1;
-  `,
-  [body.id]);
-
-
-});
+//   client.query(`
+//     DELETE FROM singers
+//     WHERE id = $1;
+//   `,
+//   [body.id]);
+// });
 
 /* end defined routes */
 
