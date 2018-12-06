@@ -1,12 +1,11 @@
 <template>
-<h1>yo</h1>
-  <!-- <section>
+  <section v-if="emoji">
     <h2>{{emoji.name}}</h2>
     <img :src="emoji.image">
     <p>Year of Birth: {{emoji.yob}}</p>
     <p v-if="emoji.goodness">Good Emoji</p>
     <p v-else>Bad Emoji</p>
-  </section> -->
+  </section>
 </template>
 
 <script>
@@ -20,7 +19,10 @@ export default {
     };
   },
   created() {
-    api.getEmoji(this.$route.params.id);
+    api.getEmoji(this.$route.params.id)
+      .then(emoji => {
+        this.emoji = emoji;
+      });
   }
 };
 </script>

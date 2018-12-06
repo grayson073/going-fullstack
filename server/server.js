@@ -19,6 +19,16 @@ app.get('/api/emojis', (req, res) => {
     });
 });
 
+app.get('/api/emojis/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM emojis WHERE id = $1;
+    `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
+
 app.post('/api/emojis', (req, res) => {
   const body = req.body;
 

@@ -6,7 +6,8 @@ export default {
   },
 
   getEmoji(id) {
-    console.log(id);
+    return fetch(`/api/emojis/${id}`)
+      .then(response => response.json());
   },
 
   addEmoji(emoji) {
