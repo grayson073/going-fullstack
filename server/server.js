@@ -28,7 +28,7 @@ app.post('/api/movies', (req, res) => {
   client.query(`
   INSERT INTO movie (name, year, genre)
   VALUES($1, $2, $3)
-  RETURNING *;
+  RETURNING id, name, year, genre;
   `,
   [body.name, body.year, body.genre])
     .then(result => {

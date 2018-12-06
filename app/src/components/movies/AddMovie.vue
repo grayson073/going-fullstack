@@ -21,7 +21,9 @@ export default {
   data() {
     return {
       movie: {
-        name: ''
+        name: '',
+        // year: '',
+        // genre: ''
       }
     };
   },
