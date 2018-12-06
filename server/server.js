@@ -18,7 +18,7 @@ app.get('/api/synths', (req, res) => {
   // TODO: reimplement queries
   // if(req.query.name) {
   client.query(`
-      SELECT name, id FROM synths;
+      SELECT name, image, polyphonic, year FROM synths;
     `)
     .then(result => {
       res.json(result.rows);

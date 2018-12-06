@@ -26,25 +26,30 @@
 </template>
 
 <script>
+// import api from '../../services/api';
+
+function initSynth() {
+  return {
+    name: '',
+    image: '',
+    polyphonic: '',
+    year: ''
+  };
+}
 export default {
   props: {
     onAdd: Function
   },
   data() {
     return {
-      synth: {
-        name: '',
-        image: '',
-        polyphonic: '',
-        year: ''
-      }
+      synth: initSynth()
     };
   },
   methods: {
     handleSubmit() {
       this.onAdd(this.synth)
         .then(() => {
-          this.synth = { name: '' };
+          this.synth = initSynth();
         });
     }
   }
