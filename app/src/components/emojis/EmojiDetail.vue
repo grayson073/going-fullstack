@@ -5,6 +5,27 @@
     <p>Year of Birth: {{emoji.yob}}</p>
     <p v-if="emoji.goodness">Good Emoji</p>
     <p v-else>Bad Emoji</p>
+    <button @click="onEdit">Edit</button>
+
+    <form v-show="edit" @submit.prevent="onUpdate">
+      <label>
+        <h4>Name:</h4>
+        <input v-model="update.name">
+      </label>
+      <label>
+        <h4>Image URL:</h4>
+        <input v-model="update.image">
+      </label>
+      <label>
+        <h4>Year Of Birth:</h4>
+        <input v-model="update.yob">
+      </label>
+      <label>
+        <h4>Goodness:</h4>
+        <input v-model="update.goodness">
+      </label>
+      <button>Update</button>
+    </form>
   </section>
 </template>
 
@@ -15,7 +36,9 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      emoji: null
+      emoji: null,
+      edit: false,
+      update: {}
     };
   },
   created() {
@@ -23,6 +46,14 @@ export default {
       .then(emoji => {
         this.emoji = emoji;
       });
+  },
+  methods: {
+    onEdit() {
+      this.edit = true;
+    },
+    onUpdate() {
+      console.log(this.update);
+    }
   }
 };
 </script>

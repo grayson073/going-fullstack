@@ -5,7 +5,6 @@
         <AddEmoji :onAdd="handleAdd"/>
 
         <EmojiList :emojis="emojis"
-          :onEdit="handleEdit"
           :onDelete="handleDelete"/>        
     </section>
 </template>
@@ -38,9 +37,6 @@ export default {
         .then(saved => {
           this.emojis.push(saved);
         });
-    },
-    handleEdit(emoji) {
-      console.log('to edit', emoji);
     },
     handleDelete(emoji) {
       api.deleteEmoji(emoji)
