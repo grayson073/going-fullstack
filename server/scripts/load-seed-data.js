@@ -1,7 +1,7 @@
 const pg = require('pg');
 const Client = pg.Client;
-const dataBaseUrl = 'postgres://localhost:5432/school';
-const grapplers = require('./grapplers.js');
+const dataBaseUrl = 'postgres://localhost:5432/champions';
+const grapplers = require('./grapplers.json');
 const client = new Client(dataBaseUrl);
 
 client.connect() 
@@ -9,9 +9,10 @@ client.connect()
         return Promise.all(
             grapplers.map(grappler => {
                 return client.query (`
-    INSERT INTO grapplers (name, age, champ)
-    VALUES($1, $2, $3)
-    RETURNING id, name, age, champ;`,
+                INSERT INTO grapplers (name, age, champ)
+                VALUES($1, $2, $3)
+                RETURNING id, name, age, champ;
+                `,
                 [grappler.name, grappler.age, grappler.champ]);
             })
         );
