@@ -29,5 +29,9 @@ export default {
       },
       body: JSON.stringify(emoji)
     });
+  },
+
+  updateEmoji(update, emoji) {
+    console.log(update, emoji);
   }
 };

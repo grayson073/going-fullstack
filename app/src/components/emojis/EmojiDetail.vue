@@ -10,19 +10,19 @@
     <form v-show="edit" @submit.prevent="onUpdate">
       <label>
         <h4>Name:</h4>
-        <input v-model="update.name">
+        <input v-model="update.name" required>
       </label>
       <label>
         <h4>Image URL:</h4>
-        <input v-model="update.image">
+        <input v-model="update.image" required>
       </label>
       <label>
         <h4>Year Of Birth:</h4>
-        <input v-model="update.yob">
+        <input v-model="update.yob" required>
       </label>
       <label>
         <h4>Goodness:</h4>
-        <input v-model="update.goodness">
+        <input v-model="update.goodness" required>
       </label>
       <button>Update</button>
     </form>
@@ -52,7 +52,7 @@ export default {
       this.edit = true;
     },
     onUpdate() {
-      console.log(this.update);
+      api.updateEmoji(this.update, this.emoji);
     }
   }
 };
