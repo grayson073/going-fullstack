@@ -45,7 +45,8 @@ app.post('/api/books', (req, res) => {
     INSERT INTO books (title, author, pages, good)
     VALUES($1, $2, $3, $4)
     RETURNING id, title, author, pages, good;
-  `[body.title, body.author, body.pages, body.good])
+  `,
+  [body.title, body.author, body.pages, body.good])
     .then(result => {
       res.json(result.rows[0]);
     });

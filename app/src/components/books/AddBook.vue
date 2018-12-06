@@ -23,26 +23,33 @@
 <script>
 import api from '../../services/api';
 
+const initBook = () => {
+  return {
+    title: '',
+    author: '',
+    pages: '',
+    good: Boolean
+  };
+};
+
 export default {
   props: {
     onAdd: Function
   },
   data() {
     return {
-      book: {
-        title: '',
-        author: '',
-        pages: '',
-        good: null
-      },
+      book: initBook(),
     };
   },
   
   methods: {
     handleSubmit() {
-      this.onAdd(this.book);
+      this.onAdd(this.book)
+        .then(() => {
+          this.student = initBook();
+        });
     }
-  }
+  },
 };
 </script>
 
