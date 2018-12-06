@@ -9,6 +9,7 @@
       <p>
         Mammal: {{animal.mammal}}
       </p>
+      <button @click="handleDelete">Delete</button>
     </div>
   </section>
 </template>
@@ -26,6 +27,14 @@ export default {
       .then(animal => {
         this.animal = animal;
       });
+  },
+  methods: {
+    handleDelete() {
+      api.deleteAnimal(this.animal.id)
+        .then(() => {
+          this.$router.push('/animals');
+        });
+    }
   }
 };
 </script>

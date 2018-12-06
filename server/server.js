@@ -46,6 +46,16 @@ app.post('/api/animals', (req, res) => {
     });
 });
 
+app.delete('/api/animals/:id', (req, res) => {
+  client.query(`
+    DELETE FROM animals WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json({ removed:result.rowCount === 1 });
+    });
+});
+
 
 const PORT = 3000;
 

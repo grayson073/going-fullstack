@@ -18,5 +18,12 @@ export default {
       body: JSON.stringify(animal)
     })
       .then(response => response.json());
+  },
+
+  deleteAnimal(id) {
+    return fetch(`/api/animals/${id}`, {
+      method: 'DELETE'
+    })
+      .then(response => response.json());
   }
 };
