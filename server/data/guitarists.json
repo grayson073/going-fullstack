@@ -2,44 +2,37 @@
   {
     "name": "Jimi Hendrix",
     "yob": 1942,
-    "alive": false,
-    "musicType": "Rock",
-    "id": "kfT5OEKjP"
+    "type": "Rock",
+    "alive": false
   },
   {
     "name": "Howlin' Wolf",
     "yob": 1910,
-    "alive": false,
-    "musicType": "Blues",
-    "id": "-oQ0hXsFI"
+    "type": "Blues",
+    "alive": "false"
   },
   {
     "name": "Tommy Iommi",
     "yob": 1948,
-    "alive": true,
-    "musicType": "Metal",
-    "id": "fCzdTDLaO"
+    "type": "Metal",
+    "alive": "true"
   },
   {
     "name": "Frank Zappa",
     "yob": 1940,
-    "alive": false,
-    "musicType": "Rock",
-    "id": "50jBEz8S1"
+    "type": "Rock",
+    "alive": false
   },
   {
     "name": "John Williams",
-    "musicType": "Classical",
-    "id": "BCaZPI09L"
+    "yob": 1941,
+    "type": "Classical",
+    "alive": true
   },
   {
     "name": "The Edge",
-    "musicType": "Pop",
-    "id": "mK9fv-CAK"
-  },
-  {
-    "name": "Rose",
-    "musicType": "Heavy Metal",
-    "id": "RXTvdIeKy"
+    "yob": 1961,
+    "type": "Pop",
+    "alive": true
   }
 ]
