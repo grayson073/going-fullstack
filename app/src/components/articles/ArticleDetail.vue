@@ -1,6 +1,6 @@
 <template>
   <section v-if="article">
-    
+
     <h2>{{article.title}}</h2>
     <p>
       By {{article.author}}
@@ -24,7 +24,7 @@ export default {
     };
   },
   created() {
-    api.getArticles(this.$route.params.id)
+    api.getArticle(this.$route.params.id)
       .then(article => {
         this.article = article;
       });

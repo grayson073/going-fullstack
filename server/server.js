@@ -15,34 +15,35 @@ const dbUrl = 'postgres://localhost:5432/news_articles';
 const client = new Client(dbUrl);
 client.connect();
 
-app.get('/api/articles', (req, res) => {
+app.get('/api/articles_table/:id', (req, res) => {
 
   client.query(`
-    SELECT * FROM articles_table;
-  `)
+    SELECT id, title, is_clickbait, author, views FROM articles_table;
+  `,
+  [req.params.id])
     .then(result => {
       res.json(result.rows);
     });
 });
 
-app.get('/api/articles/:id', (req, res) => {
+app.get('/api/articles_table/:id', (req, res) => {
 
   client.query(`
-    SELECT * FROM news_articles WHERE views = 1000
+    SELECT * FROM articles_table WHERE id = $1
   `,
-  [req.params.views])
+  [req.params.id])
     .then(result => {
       res.json(result.rows[0]);
     });
 });
 
-app.post('/api/news_articles', (req, res)=> {
+app.post('/api/articles_table', (req, res)=> {
   const body = req.body;
 
   client.query(`
-    INSERT INTO news_articles(title, author, views, is_clickbait)
+    INSERT INTO articles_table (title, author, views, is_clickbait)
     VALUES ($1, $2, $3, $4)
-    RETURNING title, author, views, is_clickbait as "isClickbait";
+    RETURNING id, title, author, views, is_clickbait as "isClickbait";
   `,
   [body.title, body.author, body.views])
     .then(result => {
