@@ -1,19 +1,24 @@
-const pg = require('pg');
-const Client = pg.Client;
-const databaseUrl = 'postgres://shaba:123@localhost:5432/emo';
+const client = require('../db-client');
 const emojis = require('./emojis.json');
+const positives = require('./positives.js');
 
-const client = new Client(databaseUrl);
-
-client.connect()
+Promise.all(
+  positives.map(pos => {
+    return client.query(`
+      INSERT INTO positives (emotion, emo_level)
+      VALUES ($1, $2);
+    `,
+    [pos.emotion, pos.emo_level]);
+  })
+)
   .then(() => {
     return Promise.all(
       emojis.map(emoji => {
         return client.query(`
-          INSERT INTO emojis (name, image, goodness, yob)
-          VALUES ($1, $2, $3, $4);
+          INSERT INTO emojis (name, image, goodness, yob, positives_id)
+          VALUES ($1, $2, $3, $4, $5);
         `,
-        [emoji.name, emoji.image, emoji.goodness, emoji.yob]);
+        [emoji.name, emoji.image, emoji.goodness, emoji.yob, ]);
       })
     );
   })
