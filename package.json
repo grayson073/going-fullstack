@@ -5,5 +5,8 @@
     "test:app": "cd app && npm i && npm test && cd ..",
     "test:server": "cd server && npm i && npm test && cd ..",
     "test": "npm run test:app && npm run test:server"
+  },
+  "dependencies": {
+    "morgan": "^1.9.1"
   }
 }
