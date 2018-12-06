@@ -22,7 +22,7 @@ app.get('/api/movies', (req, res) => {
     });
 });
 
-app.get('/api/movie/:id', (req, res) => {
+app.get('/api/movies/:id', (req, res) => {
   client.query(`
   SELECT * FROM movie WHERE id = $1;
   `,
