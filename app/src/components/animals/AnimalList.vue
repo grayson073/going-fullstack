@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   a {
     color: black;
     text-decoration: none;
@@ -24,11 +24,12 @@ export default {
   li {
     list-style: none;
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     border: 1px solid black;
     text-align: center;
-    margin: 5px 5px;
+    margin: 20px;
+    
   }
   h3 {
     text-align: center;

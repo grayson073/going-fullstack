@@ -4,7 +4,7 @@
       <input v-model="animal.name" require>
     </label>
     
-    <label>Weight
+    <label>Weight:
       <input v-model="animal.weight" type="number" require>
     </label>
 
@@ -16,7 +16,7 @@
       </select>
     </label>
 
-    <label>Image
+    <label>Image:
       <input v-model="animal.image">
     </label>
     <button>Add</button>
