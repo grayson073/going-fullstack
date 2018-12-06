@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "create-tables": "node scripts/create-tables.js",
+    "drop-tables": "node scripts/drop-tables.js",
     "load-seed-data": "node scripts/load-seed-data.js",
     "recreate-tables": "npm run drop-tables && npm run create-tables",
     "db-load-all": "npm run recreate-tables && npm run load-seed-data",
