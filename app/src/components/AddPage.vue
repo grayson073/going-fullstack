@@ -1,7 +1,12 @@
 <template>
     <div>
         <form @submit.prevent="handleSubmit">
+            <label> Name:</label>
             <input v-model="grappler.name" required>
+            <label> Age:</label>
+            <input v-model="grappler.age" type ="number" required>
+            <label> WorldChampion? Yes/No</label>
+            <input v-model="grappler.champ" type="checkbox" name="champion" id="champ" value="true">
             <button>Add</button>
         </form>
     </div>
@@ -12,7 +17,9 @@ export default {
     data() {
         return {
             grappler: {
-                name: ''
+                name: '',
+                age: '',
+                champion: Boolean
             }
         };
     }, 
@@ -21,10 +28,9 @@ export default {
     },
     methods: {
         handleSubmit() {
-            // console.log('banana', this.onAdd);
             this.onAdd(this.grappler) 
                 .then(() => {
-                    this.grappler = { name: '' };
+                    this.grappler = { name: '', age: '', champion:'' };
                 });
         }
     }

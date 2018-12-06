@@ -2,18 +2,14 @@
     <section>
         <h2> Grapplers</h2>
         <AddGrappler :onAdd="handleAdd"/>
-
-        <ul>
-            <li v-for="grappler in grapplers" :key="grappler.id">
-                {{grappler.name}}
-            </li>
-        </ul>
+        <GrapplersList :grapplers="grapplers"/>
     </section>
 </template>
 
 <script>
 import api from '../services/api';
 import AddGrappler from './AddPage.vue';
+import GrapplersList from './GrapplersList.vue';
 
 export default {
     data() {
@@ -23,7 +19,8 @@ export default {
         };
     },
     components: {
-        AddGrappler
+        AddGrappler, 
+        GrapplersList
     }, 
     created() {
         api.getGrapplers()

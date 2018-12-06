@@ -3,18 +3,24 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "create-table": "node scripts/create-table.js",
+    "drop-table": "node scripts/drop-table.js",
+    "load-seed-data": "node scripts/load-seed-data.js",
+    "recreate-table": "npm run drop-table && npm run create-table",
+    "db-load-all": "npm run recreate-table && npm run load-seed-data",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "exit 0",
-    "start": "nodemon server.js", 
+    "start": "nodemon server.js",
     "build": "npm run vue-build && rm -rf ../server/public && cp -R ./dist ../server/public"
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "morgan": "^1.9.1",
     "nodemon": "^1.18.7",
+    "pg": "^7.7.1",
     "shortid": "^2.2.14"
   },
   "devDependencies": {
