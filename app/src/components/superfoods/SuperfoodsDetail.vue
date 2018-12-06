@@ -4,8 +4,8 @@
     <p>
      Benefits:  {{superfood.benefits}}
     </p>
-    <p>
-     Is Anti-Inflammatory: {{superfood.is_anti_inflammatory}}
+    <p v-if="superfood.is_anti_inflammatory === true ">
+     This superfood is anti-inflammatory!
     </p>
   </section>
 </template>
