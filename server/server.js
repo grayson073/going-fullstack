@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const shortid = require('shortid');
+const morgan = require('morgan');
 
 const fs = require('fs');
 
@@ -12,6 +13,7 @@ function saveData(movies) {
   const json = JSON.stringify(movies, true, 2);
   fs.writeFileSync('./data/movies.json', json);
 }
+app.use(morgan('dev'));
 
 app.use(express.json());
 
