@@ -10,7 +10,8 @@
     <p class="summary">
       {{singer.summary}}
     </p>
- 
+    <!-- WIP delete functionality -->
+     <!-- <button @click=handleDelete>Delete</button> -->
   </section>
 </template>
 
