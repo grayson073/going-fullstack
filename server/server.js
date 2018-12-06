@@ -7,10 +7,32 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 
+app.get('/api/sizes', (req, res) => {
+
+  client.query(`
+    SELECT id, name, short_name as "shortName" 
+    FROM size
+    ORDER BY name;
+  `)
+    .then(result => {
+      res.json(result.rows);
+    });
+});
+
 app.get('/api/animals', (req, res) => {
 
   client.query(`
-    SELECT id, name, image FROM animals;
+    SELECT 
+      animals.id, 
+      animals.name as name, 
+      animals.weight as weight,
+      animals.image as image,
+      size.id as "sizeId",
+      size.name as size
+    FROM animals
+    JOIN size
+    ON animals.size_id = size.id
+    ORDER BY name ASC;
   `)
     .then(result => {
       res.json(result.rows);

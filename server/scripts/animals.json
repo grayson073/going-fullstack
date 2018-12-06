@@ -4,34 +4,34 @@
     "mammal": true,
     "weight": 510,
     "image": "http://www.kiplinger.com/kipimages/pages/18100.jpg",
-    "size": "big"
+    "size": "l"
   },
   {
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Siberischer_tiger_de_edit02.jpg",
     "name": "Tiger",
     "mammal": true,
     "weight": 500,
-    "size": "big"
+    "size": "l"
   },
   {
     "mammal": true,
     "name": "Dolphin",
     "weight": 55,
     "image": "https://thenypost.files.wordpress.com/2017/05/shutterstock_547308685.jpg?quality=90&strip=all&w=618&h=410&crop=1",
-    "size": "medium"
+    "size": "m"
   },
   {
     "name": "Cockatoo",
     "weight": 3,
     "mammal": false,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Cacatua_galerita_-perching_on_branch_-crest-8a-2c.jpg/220px-Cacatua_galerita_-perching_on_branch_-crest-8a-2c.jpg",
-    "size": "small"
+    "size": "s"
   },
   {
     "name": "Cat",
     "weight": "12 ",
     "mammal": "true",
     "image": "https://i.pinimg.com/236x/db/98/de/db98de3a32fbad95e5317be1f6f358ac.jpg",
-    "size": "small"
+    "size": "s"
   }
 ]

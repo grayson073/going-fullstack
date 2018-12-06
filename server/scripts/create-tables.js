@@ -13,7 +13,7 @@ client.query(`
     name VARCHAR(256) NOT NULL,
     weight INT,
     mammal BOOLEAN,
-    size VARCHAR(256),
+    size_id INTEGER NOT NULL REFERENCES size(id),
     image VARCHAR(256)
   );
 
