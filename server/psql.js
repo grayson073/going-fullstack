@@ -9,7 +9,7 @@ client.connect();
 
 // CREATES SEED DATA
 client.query(`
-  SELECT name, image, polyphonic, year, id FROM synths;
+  SELECT name, image, polyphonic, year FROM synths;
 `)
   .then(
     results => {

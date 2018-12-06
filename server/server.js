@@ -34,13 +34,6 @@ app.get('/api/synths/:id', (req, res) => {
     });
 });
 
-//TODO: app.del('/api/synths/:id, (req, res) => {
-//   similar to get but just a delete sql statement
-//    DELETE * FROM synths WHERE id = $1;
-// })
-// ^ but if in UI and delete, program app to go back to list ???
-// TODO: edit - put with an update
-
 app.post('/api/synths', (req, res) => {
   const body = req.body;
   client.query(`

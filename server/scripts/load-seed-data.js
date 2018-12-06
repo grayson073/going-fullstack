@@ -11,10 +11,10 @@ client.connect()
     return Promise.all(
       synths.map(synth => {
         return client.query(`
-          INSERT INTO synths (name, image, polyphonic, year, id)
-          VALUES ($1, $2, $3, $4, $5);
+          INSERT INTO synths (name, image, polyphonic, year)
+          VALUES ($1, $2, $3, $4);
         `,
-        [synth.name, synth.image, synth.polyphonic, synth.year, synth.id]);
+        [synth.name, synth.image, synth.polyphonic, synth.year]);
       })
     );
   })
