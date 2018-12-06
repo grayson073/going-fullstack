@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "npm run lint",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test": "npm run lint"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^2.5.17",
