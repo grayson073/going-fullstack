@@ -7,7 +7,7 @@ const client = new Client(databaseUrl);
 client.connect()
   .then(() => {
     return client.query(`
-      CREATE TABLE IF NOT EXISTS synth (
+      CREATE TABLE IF NOT EXISTS synths (
         name VARCHAR(256) NOT NULL,
         image VARCHAR(256),
         polyphonic BOOLEAN,

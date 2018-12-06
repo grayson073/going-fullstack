@@ -8,7 +8,7 @@ const client = new Client(databaseUrl);
 client.connect();
 
 client.query(`
-  SELECT * FROM synth;
+  SELECT * FROM synths;
 `)
   .then(results => {
     console.log(results.rows);
