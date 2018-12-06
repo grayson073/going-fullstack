@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <br />
+      <RouterLink to="/movies">Movies</RouterLink>
+    </nav>
     <main>
       <RouterView></RouterView>
     </main>

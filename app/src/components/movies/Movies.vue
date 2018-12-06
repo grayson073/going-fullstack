@@ -1,15 +1,33 @@
 <template>
-  <div>
-    <RouterLink to="/">Home</RouterLink>
-    <br />
-    <RouterLink to="/components/movies">Movies</RouterLink>
+  <div class="movies">
     <h2>Movies!!</h2>
+    <MovieList :movies="movies" />
   </div>
 </template>
 
 <script>
-export default {
+import api from '../../services/api.js';
+import MovieList from './MovieList.vue';
 
+export default {
+  data() {
+    return {
+      movies: null,
+      error: null
+    };
+  },
+  components: {
+    MovieList
+  },
+  created() {
+    api.getMovies()
+      .then(movies => {
+        this.movies = movies;
+      })
+      .catch(err => {
+        this.error = err;
+      });
+  }
 };
 </script>
 
