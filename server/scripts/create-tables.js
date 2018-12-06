@@ -1,3 +1,6 @@
+// const client = requre('../db-client')
+//clean up
+
 const pg = require('pg');
 const Client = pg.Client;
 const databaseUrl = 'postgres://localhost:5432/films';

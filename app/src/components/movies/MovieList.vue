@@ -15,5 +15,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
+ul {
+  list-style: none;
+}
 </style>
