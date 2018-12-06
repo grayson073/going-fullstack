@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-// const shortid = require('shortid');
 const pg = require('pg');
 
 app.use(express.json());
@@ -41,6 +40,15 @@ app.post('/api/emojis', (req, res) => {
     .then(result => {
       res.json(result.rows[0]);
     });
+});
+
+app.post('/api/emojis/delete', (req, res) => {
+  client.query(`
+    DELETE FROM emojis WHERE id = $1
+  `,
+  [req.body.id]);
+
+  res.json();
 });
 
 const PORT = 3000;
