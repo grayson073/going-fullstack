@@ -7,7 +7,6 @@
         <ul v-if="movies">
             <li v-for="movie in movies" :key="movie.id">
                 {{movie.name}}
-                {{movie.year}}
             </li>
         </ul>
     </section>

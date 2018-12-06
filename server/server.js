@@ -22,6 +22,16 @@ app.get('/api/movies', (req, res) => {
     });
 });
 
+app.get('/api/movie/:id', (req, res) => {
+  client.query(`
+  SELECT * FROM movie WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
+
 app.post('/api/movies', (req, res) => {
   const body = req.body;
 

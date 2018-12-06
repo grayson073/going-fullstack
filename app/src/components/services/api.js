@@ -16,5 +16,5 @@ export default {
       body: JSON.stringify(movie)
     })
       .then(response => response.json());
-  }
+  },
 };

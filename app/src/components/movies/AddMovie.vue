@@ -14,6 +14,9 @@
 </template>
 
 <script>
+// import api from '../services/api';
+
+// function initMovie
 export default {
   props: {
     onAdd: Function
