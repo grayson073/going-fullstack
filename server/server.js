@@ -18,7 +18,7 @@ client.connect();
 app.get('/api/articles', (req, res) => {
 
   client.query(`
-    SELECT id, title FROM news_articles;
+    SELECT * FROM articles_table;
   `)
     .then(result => {
       res.json(result.rows);
@@ -28,9 +28,9 @@ app.get('/api/articles', (req, res) => {
 app.get('/api/articles/:id', (req, res) => {
 
   client.query(`
-    SELECT * FROM news_articles WHERE Views = 1000
+    SELECT * FROM news_articles WHERE views = 1000
   `,
-  [req.params.Views])
+  [req.params.views])
     .then(result => {
       res.json(result.rows[0]);
     });
@@ -40,9 +40,9 @@ app.post('/api/news_articles', (req, res)=> {
   const body = req.body;
 
   client.query(`
-    INSERT INTO news_articles(title, author, views)
+    INSERT INTO news_articles(title, author, views, is_clickbait)
     VALUES ($1, $2, $3, $4)
-    RETURNING title, author, views
+    RETURNING title, author, views, is_clickbait as "isClickbait";
   `,
   [body.title, body.author, body.views])
     .then(result => {

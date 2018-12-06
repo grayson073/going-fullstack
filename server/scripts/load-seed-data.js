@@ -11,7 +11,7 @@ client.connect()
     return Promise.all(
       articles.map(article => {
         return client.query(`
-          INSERT INTO news_articles (title, author, views)
+          INSERT INTO articles_table (title, author, views)
           VALUES ($1, $2, $3);
         `,
         [article.title, article.author, article.views]);

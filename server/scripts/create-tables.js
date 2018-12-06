@@ -10,12 +10,12 @@ const client = new Client(databaseURL);
 client.connect()
   .then(() => {
     return client.query(`
-      CREATE TABLE IF NOT EXISTS news_articles (
+      CREATE TABLE IF NOT EXISTS articles_table (
         id SERIAL PRIMARY KEY,
         title VARCHAR(256) NOT NULL,
-        category VARCHAR(256),
-        track VARCHAR(256),
-        views VIEWS
+        is_clickbait BOOLEAN,
+        author VARCHAR(256),
+        views VARCHAR(256)
       );
     `);
   })
