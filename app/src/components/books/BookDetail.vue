@@ -1,8 +1,8 @@
 <template>
-  <section v-if="student">
-    <h2>{{book.title}}</h2>
-    <p>{{book.author}}</p>
-    <p>{{book.pages}}</p>
+  <section v-if="book">
+    <h2>Book: {{book.title}}</h2>
+    <p>Author: {{book.author}}</p>
+    <p>Pages: {{book.pages}}</p>
   </section>
 
 </template>
@@ -13,7 +13,7 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      student: null
+      book: null
     };
   },
   created() {
