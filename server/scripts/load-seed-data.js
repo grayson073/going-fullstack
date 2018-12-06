@@ -1,6 +1,6 @@
 const pg = require('pg');
 const Client = pg.Client;
-const databaseUrl = 'postgres://localhost:5432/singers';
+const databaseUrl = 'postgres://localhost:5432/rockstars';
 const singers = require('./singers.json');
 
 const client = new Client(databaseUrl);

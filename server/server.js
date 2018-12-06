@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const shortid = require('shortid');
 const morgan = require('morgan');
 const pg = require('pg');
 
@@ -25,7 +24,7 @@ client.connect();
 app.get('/api/singers', (req, res) => {
    
   client.query(`
-    SELECT id, name FROM singers;
+    SELECT * FROM singers;
   `)
     .then(result => {
       res.json(result.rows);

@@ -4,6 +4,11 @@ export default {
       return fetch('/api/singers')
         .then(response => response.json());      
     },
+
+    getSinger(id) {
+      return fetch(`/api/singers/${id}`)
+        .then(response => response.json());
+    },
   
     addSinger(singer) {
       return fetch('/api/singers', {

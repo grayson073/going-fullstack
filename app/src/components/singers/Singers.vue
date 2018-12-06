@@ -1,24 +1,15 @@
 <template>
   <section class="singers">
     <h2>The Singers</h2>
-
-    <ul v-if="singers">
-      <li v-for="singer in singers" :key="singer.id">
-        <p class="singer-name"> {{singer.name}}</p>
-        <p class="singer-genre">{{singer.genre}}</p>
-        <!-- <p class="singer-genre">Age: {{singer.age}}</p>
-        <p class="singer-genre">Summary: {{singer.summary}}</p> -->
-      </li>
-    </ul>
-
     <AddSinger :onAdd="handleAdd"/>
-    
+    <SingerList :singers="singers"/>
   </section>
 </template>
 
 <script>
 import api from '../../services/api';
 import AddSinger from './AddSinger';
+import SingerList from './SingerList'
 
 export default {
   data() {
@@ -28,7 +19,8 @@ export default {
     };
   },
   components: {
-    AddSinger
+    AddSinger,
+    SingerList
   },
   created() {
     api.getSingers()
@@ -54,27 +46,9 @@ export default {
 <style lang="postcss" scoped>
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
-ul {
-    display: flex;
-}
-
-li {
-    list-style-type: none;
-    margin: 30px;
+h2 {
     font-family: 'PT Sans Narrow', sans-serif;
-}
-
-.singer-name {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
-}
-
-.singer-genre {
-    font-size: .8em;
-    margin: 0;
-    padding: 0;
+    font-size: 2.4em;
 }
 
 </style>
