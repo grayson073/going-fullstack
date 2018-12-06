@@ -5,6 +5,9 @@
         </label>
         <label> Year
         <input v-model="movie.year" require>
+        </label>
+        <label> Genre
+        <input v-model="movie.genre" require>
         <button>Add</button>
         </label>
     </form>
