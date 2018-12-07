@@ -63,7 +63,13 @@ export default {
       this.edit = true;
     },
     onUpdate() {
-      api.updateEmoji(this.update, this.$route.params.id);
+      api.updateEmoji(this.update, this.$route.params.id)
+        .then(() => {
+          api.getEmoji(this.$route.params.id)
+            .then(emoji => {
+              this.emoji = emoji;
+            });
+        });
     }
   }
 };
