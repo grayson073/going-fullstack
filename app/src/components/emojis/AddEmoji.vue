@@ -8,6 +8,14 @@
             Image URL:
             <input v-model="emoji.image" required>
         </label>
+        <label>
+            Year of Birth:
+            <input placeholder="yyyy" v-model="emoji.yob" required>
+        </label>
+        <label>
+            Goodness:
+            <input placeholder="true/false" v-model="emoji.goodness" required>
+        </label>
         <button>Add</button>
     </form>
 </template>

@@ -4,13 +4,8 @@
 
         <AddEmoji :onAdd="handleAdd"/>
 
-        <ul v-if="emojis">
-          <li v-for="emoji in emojis" :key="emoji.id">
-            <h3>{{emoji.name}}</h3>
-            <img :src="emoji.image">
-          </li>
-
-        </ul>
+        <EmojiList :emojis="emojis"
+          :onDelete="handleDelete"/>        
     </section>
 </template>
 
@@ -18,6 +13,7 @@
 
 import api from '../../services/api.js';
 import AddEmoji from './AddEmoji';
+import EmojiList from './EmojiList';
 
 export default {
   data() {
@@ -26,7 +22,8 @@ export default {
     };
   },
   components: {
-    AddEmoji
+    AddEmoji,
+    EmojiList
   },
   created() {
     api.getEmojis()
@@ -39,6 +36,15 @@ export default {
       return api.addEmoji(emoji)
         .then(saved => {
           this.emojis.push(saved);
+        });
+    },
+    handleDelete(emoji) {
+      api.deleteEmoji(emoji)
+        .then(() => {
+          api.getEmojis()
+            .then(emojis => {
+              this.emojis = emojis;
+            });
         });
     }
   }

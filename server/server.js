@@ -1,35 +1,54 @@
 const express = require('express');
 const app = express();
-const shortid = require('shortid');
-
-const fs = require ('fs');
-
-function readData() {
-  const data = fs.readFileSync('./data/emojis.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(emojis) {
-  const json = JSON.stringify(emojis, true, 2);
-  fs.writeFileSync('./data/emojis.json', json);
-}
+const pg = require('pg');
 
 app.use(express.json());
 
+const Client = pg.Client;
+const dbUrl = 'postgres://shaba:123@localhost:5432/emo';
+const client = new Client(dbUrl);
+client.connect();
+
 app.get('/api/emojis', (req, res) => {
-  const emojis = readData();
-  res.json(emojis);
+  client.query(`
+    SELECT * FROM emojis;
+  `)
+    .then(result => {
+      res.json(result.rows);
+    });
+});
+
+app.get('/api/emojis/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM emojis WHERE id = $1;
+    `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 app.post('/api/emojis', (req, res) => {
-  const emojis = readData();
-  const emoji = req.body;
-  console.log('server emoji', emoji);
-  emoji.id = shortid.generate();
-  emojis.push(emoji);
-  saveData(emojis);
+  const body = req.body;
 
-  res.json(emoji);
+  client.query(`
+    INSERT INTO emojis (name, image, yob, goodness)
+    VALUES($1, $2, $3, $4)
+    RETURNING id, name, image, yob, goodness;
+  `,
+  [body.name, body.image, body.yob, body.goodness])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
+
+app.post('/api/emojis/delete', (req, res) => {
+  client.query(`
+    DELETE FROM emojis WHERE id = $1
+  `,
+  [req.body.id]);
+
+  res.json();
 });
 
 const PORT = 3000;
