@@ -27,6 +27,17 @@ export default {
       .then(response => response.json());
   },
 
+  updateAnimal(animal, id) {
+    return fetch(`api/animals/${id}`, {
+      method: 'UPDATE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(animal)
+    })
+      .then(response => response.json());
+  },
+
   getSizes() {
     return fetch('/api/sizes')
       .then(response => response.json());
