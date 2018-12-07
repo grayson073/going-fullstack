@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Incredibles",
+    "year": 2004,
+    "rating": true
+  },
+  {
+    "name": "Robot Monster",
+    "year": 1953,
+    "rating": false
+  },
+  {
+    "name": "Inception",
+    "year": 2010,
+    "rating": true
+  }
+]
