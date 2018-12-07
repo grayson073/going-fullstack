@@ -3,63 +3,72 @@
     "name": "Korg MS-20",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/ms20.jpg",
     "polyphonic": false,
-    "year": 1978,
-    "id": "1"
+    "year": 1978
   },
   {
     "name": "Octave The Kitten",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/kitten.jpg",
     "polyphonic": false,
-    "year": 1981,
-    "id": "2"
+    "year": 1981
   },
   {
     "name": "Roland Juno-6",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/roland_juno6_angle.jpg",
     "polyphonic": true,
-    "year": 1982,
-    "id": "3"
+    "year": 1982
   },
   {
     "name": "Korg MS2000",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/korg_ms2000.jpg",
     "polyphonic": true,
-    "year": 2000,
-    "id": "4buE1e7GE"
+    "year": 2000
   },
   {
     "name": "Casio CT-401",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/casio_ct401.jpg",
     "polyphonic": true,
-    "year": 1981,
-    "id": "RoTuU2t3_"
+    "year": 1981
   },
   {
     "name": "Crumar Stratus",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/crumar_stratus_2.jpg",
     "polyphonic": true,
-    "year": 1982,
-    "id": "WHTQ4O7VG"
+    "year": 1982
   },
   {
     "name": "Roland Jupiter-6",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/roland_jupiter6.jpg",
     "polyphonic": true,
-    "year": 1983,
-    "id": "7BfxgUTwr"
+    "year": 1983
   },
   {
     "name": "Moog Opus-3",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/moog_opus3_angle.jpg",
     "polyphonic": true,
-    "year": 1980,
-    "id": "vUisAfEn0"
+    "year": 1980
   },
   {
     "name": "Yamaha CS-5",
     "image": "http://www.vintagesynth.com/sites/default/files/2017-05/cs5.jpg",
     "polyphonic": false,
-    "year": 1978,
-    "id": "CLwvwV2OI"
+    "year": 1978
+  },
+  {
+    "name": "Moog Minimoog",
+    "image": "http://www.vintagesynth.com/sites/default/files/2017-05/moog_minimoogd.jpg",
+    "polyphonic": false,
+    "year": 1970
+  },
+  {
+    "name": "Moog Rogue",
+    "image": "http://www.vintagesynth.com/sites/default/files/2017-05/moog_rogue.jpg",
+    "polyphonic": false,
+    "year": 1981
+  },
+  {
+    "name": "ARP Pro-Soloist",
+    "image": "http://www.vintagesynth.com/sites/default/files/2017-05/new_arp_prosoloist.jpg",
+    "polyphonic": false,
+    "year": 1972
   }
 ]

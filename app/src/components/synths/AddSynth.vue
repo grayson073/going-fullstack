@@ -11,12 +11,12 @@
       <br>
       <label>
         Polyphonic?
-          Yes:<input type="radio" v-model="synth.polyphonic" v-bind:value="true">
-          No:<input type="radio" v-model="synth.polyphonic" v-bind:value="false">
+          Yes:<input type="radio" name="poly" v-model="synth.polyphonic" v-bind:value="true" required>
+          No:<input type="radio" name="poly" v-model="synth.polyphonic" v-bind:value="false">
       </label>
       <br>
       <label>
-        Date produced: <input v-model.number="synth.year" required>
+        Date produced: <input type="number" v-model.number="synth.year" required>
       </label>
       <p>
         <button>Add</button>
@@ -26,25 +26,29 @@
 </template>
 
 <script>
+
+function initSynth() {
+  return {
+    name: '',
+    image: '',
+    polyphonic: '',
+    year: ''
+  };
+}
 export default {
   props: {
     onAdd: Function
   },
   data() {
     return {
-      synth: {
-        name: '',
-        image: '',
-        polyphonic: '',
-        year: ''
-      }
+      synth: initSynth()
     };
   },
   methods: {
     handleSubmit() {
       this.onAdd(this.synth)
         .then(() => {
-          this.synth = { name: '' };
+          this.synth = initSynth();
         });
     }
   }

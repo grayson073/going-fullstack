@@ -2,20 +2,14 @@
   <section>
     <h2>Synths</h2>
     <AddSynth :onAdd="handleAdd"/>
-    <ul v-if="synths">
-      <li v-for="synth in synths" :key="synth.id">
-        <h3>{{synth.name}}</h3>
-        <p>Polyphonic? {{synth.polyphonic}}</p>
-        <p>Date produced: {{synth.year}}</p>
-        <img :src="synth.image">
-      </li>
-    </ul>
+    <SynthList :synths="synths"/>
   </section>
 </template>
 
 <script>
 import api from '../../services/api';
 import AddSynth from './AddSynth';
+import SynthList from './SynthList';
 
 export default {
   data() {
@@ -25,7 +19,8 @@ export default {
     };
   },
   components: {
-    AddSynth
+    AddSynth,
+    SynthList
   },
   created() {
     api.getSynths()
