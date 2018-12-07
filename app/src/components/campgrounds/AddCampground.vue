@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      student: {
+      campground: {
         name: ''
       }
     };

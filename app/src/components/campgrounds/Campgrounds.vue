@@ -1,14 +1,8 @@
 <template>
   <section class="campgrounds">
     <h2>Oregon Campgrounds</h2>
-
-    <AddCampground :onAdd="handleAdd"/>
-
-    <ul v-if="campgrounds">
-      <li v-for="campground in campgrounds" :key="campground.id">
-        {{campground.name}}
-      </li>
-    </ul>
+    <AddCampground :onAdd="handleAdd" />
+    <campgroundList :campgrounds="campgrounds" />
   </section>
 </template>
 

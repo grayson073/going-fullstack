@@ -1,0 +1,22 @@
+[
+  {
+  "name": "Shady Cove Campground",
+  "forest": "forest",
+  "seasonDates": "1/1"
+  },
+  {
+  "name": "Elk Creek Campground",
+  "forest": "forest",
+  "seasonDates": "1/1"
+  },
+  {
+  "name": "House Rock Campground",
+  "forest": "forest",
+  "seasonDates": "1/1"
+  },
+  {
+  "name": "Trout Creek Campground",
+  "forest": "forest",
+  "seasonDates": "1/1"
+  }
+]
