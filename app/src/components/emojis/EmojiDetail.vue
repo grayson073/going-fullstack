@@ -30,9 +30,9 @@
         <h4>Scale:</h4>
         <select v-model="update.scale">
           <option disabled value="">Select One</option>
-          <option value="positive">Positive</option>
-          <option value="negative">Negative</option>
-          <option value="neutral">Neutral</option>
+          <option value="1">Positive</option>
+          <option value="2">Negative</option>
+          <option value="3">Neutral</option>
         </select>
       </label>
       <button>Update</button>
@@ -63,6 +63,7 @@ export default {
       this.edit = true;
     },
     onUpdate() {
+      this.edit = false;
       api.updateEmoji(this.update, this.$route.params.id)
         .then(() => {
           api.getEmoji(this.$route.params.id)

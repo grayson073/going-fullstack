@@ -62,10 +62,11 @@ app.post('/api/emojis/update/:id', (req, res) => {
     SET
       name = $1,
       image = $2,
-      yob = $3
-    WHERE id = $4
+      yob = $3,
+      scales_id = $4
+    WHERE id = $5
   `,
-  [body.name, body.image, body.yob, req.params.id])
+  [body.name, body.image, body.yob, body.scale, req.params.id])
     .then(() => res.json());
 });
 
