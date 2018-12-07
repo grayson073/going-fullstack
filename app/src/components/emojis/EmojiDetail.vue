@@ -45,6 +45,7 @@ export default {
     api.getEmoji(this.$route.params.id)
       .then(emoji => {
         this.emoji = emoji;
+        console.log(emoji);
       });
   },
   methods: {
