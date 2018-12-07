@@ -1,21 +1,15 @@
 <template>
   <section>
     <h2>Superheroes</h2>
-
     <AddSuperhero :onAdd="handleAdd"/>
-
-    <ul v-if="superheroes">
-      <li v-for="superhero in superheroes" :key="superhero.id">
-        {{superhero.name}}
-        {{superhero.age}}
-      </li>
-    </ul>
+    <SuperheroList :superheroes="superheroes"/>    
   </section>
 </template>
 
 <script>
 import api from '../../services/api';
 import AddSuperhero from './AddSuperhero';
+import SuperheroList from './SuperheroList';
 
 export default {
   data() {
@@ -25,7 +19,8 @@ export default {
     };
   },
   components: {
-    AddSuperhero
+    AddSuperhero,
+    SuperheroList
   },
   created() {
     api.getSuperheroes()

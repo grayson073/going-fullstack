@@ -5,6 +5,11 @@ export default {
       .then(response => response.json());      
   },
 
+  getSuperhero(name) {
+    return fetch(`/api/superheroes/${name}`)
+      .then(response => response.json());
+  },
+
   addSuperhero(superhero) {
     return fetch('/api/superheroes', {
       method: 'POST',
