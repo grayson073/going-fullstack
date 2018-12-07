@@ -26,7 +26,7 @@ export default {
     position: relative;
     width: 350px;
     height: 350px;
-    border: 1px solid black;
+    border: 2px solid black;
     text-align: center;
     margin: 20px;
     
