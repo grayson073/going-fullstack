@@ -3,8 +3,6 @@ const app = express();
 const morgan = require('morgan');
 const pg = require('pg');
 
-app.use(morgan('dev'));
-
 app.use(express.json());
 
 const Client = pg.Client;
