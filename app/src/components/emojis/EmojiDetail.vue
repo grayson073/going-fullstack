@@ -3,6 +3,7 @@
     <h2>{{emoji.name}}</h2>
     <img :src="emoji.image">
     <p>Year of Birth: {{emoji.yob}}</p>
+    <p>Scale: {{emoji.scale}}</p>
     <p v-if="emoji.goodness">Good Emoji</p>
     <p v-else>Bad Emoji</p>
     <button @click="onEdit">Edit</button>
@@ -23,6 +24,15 @@
       <label>
         <h4>Goodness:</h4>
         <input v-model="update.goodness" required>
+      </label>
+      <label>
+        <h4>Scale:</h4>
+        <select v-model="update.scale">
+          <option disabled value="">Select One</option>
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+          <option value="neutral">Neutral</option>
+        </select>
       </label>
       <button>Update</button>
     </form>

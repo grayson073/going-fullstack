@@ -15,7 +15,6 @@ app.get('/api/emojis', (req, res) => {
 });
 
 app.get('/api/emojis/:id', (req, res) => {
-  console.log('emoji/id called');
   client.query(`
     SELECT
       emojis.name,
