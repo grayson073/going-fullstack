@@ -1,29 +1,42 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <label>Name: 
-      <input v-model="animal.name" require>
-    </label>
+    <p>
+      <label>Name: 
+        <input v-model="animal.name" require>
+      </label>
+    </p>
     
-    <label>Weight:
-      <input v-model="animal.weight" type="number" require>
-    </label>
+    <p>
+      <label>Weight:
+        <input v-model="animal.weight" type="number" require>
+      </label>
+    </p>
 
-    <label>Mammal (T/F):
-      <select v-model="animal.mammal">
-        <option value="" disabled>Select</option>
-        <option value="true">True</option>
-        <option value="false">False</option>
-      </select>
-    </label>
+    <p>
+      <label>Mammal (T/F):
+        <select v-model="animal.mammal">
+          <option value="" disabled>Select</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+      </label>
+    </p>
 
-    <label>Size:
-      <select v-model="animal.size">
-        <option value="" disabled>Select</option>
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
+    <p>
+    <label>Size:</label>
+      <select v-if="sizes" 
+        v-model="animal.sizeId"
+        required
+      >
+        <option value="-1" disabled>Select a Size</option>
+        <option v-for="size in sizes"
+          v-bind:key="size.id"
+          v-bind:value="size.id"
+        >
+          {{size.name}} ({{size.shortName}})
+        </option>
       </select>
-    </label>
+    </p>
 
     <label>Image:
       <input v-model="animal.image">
@@ -33,20 +46,39 @@
 </template>
 
 <script>
+import api from '../../services/api';
+
+function initAnimal() {
+  return {
+    name: '',
+    weight: '',
+    mammal: '',
+    image: '',
+    sizeId: -1,
+  };
+}
+
 export default {
   props: {
     onAdd: Function
   },
   data() {
     return {
-      animal: {}
+      animal: initAnimal(),
+      sizes: null
     };
+  },
+  created() {
+    api.getSizes()
+      .then(sizes => {
+        this.sizes = sizes;
+      });
   },
   methods: {
     handleSubmit() {
       this.onAdd(this.animal)
         .then(() => {
-          this.animal = {};
+          this.animal = initAnimal();
         });
     }
   }

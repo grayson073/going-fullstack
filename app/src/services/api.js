@@ -25,5 +25,10 @@ export default {
       method: 'DELETE'
     })
       .then(response => response.json());
+  },
+
+  getSizes() {
+    return fetch('/api/sizes')
+      .then(response => response.json());
   }
 };
