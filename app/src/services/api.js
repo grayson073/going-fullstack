@@ -29,5 +29,15 @@ export default {
       },
       body: JSON.stringify(emoji)
     });
+  },
+
+  updateEmoji(update, id) {
+    return fetch(`/api/emojis/update/${id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(update)
+    });
   }
 };

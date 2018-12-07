@@ -8,6 +8,7 @@ client.connect()
   .then(() => {
     return client.query(`
       DROP TABLE IF EXISTS emojis;
+      DROP TABLE IF EXISTS scales;
     `);
   })
   .then(

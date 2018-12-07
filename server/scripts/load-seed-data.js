@@ -1,19 +1,31 @@
-const pg = require('pg');
-const Client = pg.Client;
-const databaseUrl = 'postgres://shaba:123@localhost:5432/emo';
+const client = require('../db-client');
 const emojis = require('./emojis.json');
+const scales = require('./scales.js');
 
-const client = new Client(databaseUrl);
-
-client.connect()
+Promise.all(
+  scales.map(scale => {
+    return client.query(`
+      INSERT INTO scales (short_name, scale)
+      VALUES ($1, $2);
+    `,
+    [scale.shortName, scale.sc]);
+  })
+)
   .then(() => {
     return Promise.all(
       emojis.map(emoji => {
         return client.query(`
-          INSERT INTO emojis (name, image, goodness, yob)
-          VALUES ($1, $2, $3, $4);
+          INSERT INTO emojis (name, image, goodness, yob, scales_id)
+          SELECT
+            $1 as name,
+            $2 as image,
+            $3 as goodness,
+            $4 as yob,
+            id as scales_id
+          FROM scales
+          WHERE short_name = $5
         `,
-        [emoji.name, emoji.image, emoji.goodness, emoji.yob]);
+        [emoji.name, emoji.image, emoji.goodness, emoji.yob, emoji.sc]);
       })
     );
   })

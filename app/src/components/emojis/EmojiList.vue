@@ -1,8 +1,10 @@
 <template>
   <ul v-if="emojis">
     <li v-for="emoji in emojis" :key="emoji.id">
-      <RouterLink :to="`/emojis/${emoji.id}`"><h3>{{emoji.name}}</h3></RouterLink>
-      <img :src="emoji.image">
+      <RouterLink :to="`/emojis/${emoji.id}`">
+        <h3>{{emoji.name}}</h3>
+        <img :src="emoji.image">
+      </RouterLink>
       <button @click="onDelete(emoji)">Delete</button>
     </li>
   </ul>
