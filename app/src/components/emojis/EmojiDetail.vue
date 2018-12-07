@@ -21,10 +21,11 @@
         <h4>Year Of Birth:</h4>
         <input v-model="update.yob" required>
       </label>
-      <label>
-        <h4>Goodness:</h4>
-        <input v-model="update.goodness" required>
-      </label>
+      <!-- <label>
+        <h4>Goodness?</h4>
+        <input type="radio" value="1" v-model="update.goodness" required>True
+        <input type="radio" value="0" v-model="update.goodness" required>False
+      </label> -->
       <label>
         <h4>Scale:</h4>
         <select v-model="update.scale">
@@ -55,7 +56,6 @@ export default {
     api.getEmoji(this.$route.params.id)
       .then(emoji => {
         this.emoji = emoji;
-        console.log(emoji);
       });
   },
   methods: {
@@ -63,7 +63,7 @@ export default {
       this.edit = true;
     },
     onUpdate() {
-      api.updateEmoji(this.update, this.emoji);
+      api.updateEmoji(this.update, this.$route.params.id);
     }
   }
 };

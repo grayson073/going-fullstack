@@ -56,6 +56,22 @@ app.post('/api/emojis/delete', (req, res) => {
   res.json();
 });
 
+app.post('/api/emojis/update/:id', (req, res) => {
+  console.log(req.params);
+  const body = req.body;
+  client.query(`
+    UPDATE emojis
+    SET
+      name = $1,
+      image = $2,
+      yob = $3
+    WHERE id = $4
+  `,
+  [body.name, body.image, body.yob, req.params.id]);
+
+  res.json();
+});
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
