@@ -1,51 +1,63 @@
 const express = require('express');
 const app = express();
-const shortid = require('shortid');
+const pg = require('pg');
+const morgan = require('morgan');
 
-const fs = require('fs');
+// const shortid = require('shortid');
+// const fs = require('fs');
+//enhanced logging
+app.use(morgan('dev'));
 
-function readData() {
-  const data = fs.readFileSync('./data/books.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(books) {
-  const json = JSON.stringify(books, true, 2);
-  fs.writeFileSync('./data/books.json', json);
-}
-
+//register the json "middleware" body parser
 app.use(express.json());
 
+/* connect to pg */
+const Client = pg.Client;
+const dbUrl = 'postgres://postgres:Stitch32.@localhost:5432/books';
+const client = new Client(dbUrl);
+client.connect();
+/* end connect pg */
+
+/* defined routes: METHOD, URLPATH */
 app.get('/api/books', (req, res) => {
-  const books = readData();
-  // res.json(books);
-  
-  if(req.query.title) {
-    const match = req.query.title.toLowerCase();
-    const filtered = books.filter(b => {
-      return b.title.toLowerCase().startsWith(match);
+  client.query(`
+    SELECT id, title FROM books;  
+  `)
+    .then(result => {
+      res.json(result.rows);
     });
-    res.json(filtered);
-  }
-  else {
-    res.json(books);
-  }
 });
 
-app.post('/api/books', (req, res) => {
-
-  const books = readData();
-  const book = req.body;
-  book.id = shortid.generate();
+app.get('/api/books/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM books WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
+});
   
-  books.push(book);
-  saveData(books);
+app.post('/api/books', (req, res) => {
+  const body = req.body;
 
-  res.json(book);
+  client.query(`
+    INSERT INTO books (title, author, pages, good)
+    VALUES($1, $2, $3, $4)
+    RETURNING id, title, author, pages, good;
+  `,
+  [body.title, body.author, body.pages, body.good])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
-// this should go at the bottom //
+/* end defined routes*/
+
+/* configure and start the server */
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log('server app started on port', PORT);
 });
+/* end configure and server start */

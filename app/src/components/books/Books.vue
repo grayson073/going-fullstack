@@ -3,19 +3,15 @@
         <h2>Books</h2>
 
         <AddBook :onAdd="handleAdd"/>
+        <BookList :books="books"/>
 
-        <ul v-if="books">
-            <li v-for="book in books" 
-                :key="book.id">
-                {{book.title}}
-            </li>
-        </ul>
     </section>
 </template>
 
 <script>
 import api from '../../services/api';
 import AddBook from './AddBook';
+import BookList from './BookList';
 
 export default {
   data() {
@@ -25,7 +21,8 @@ export default {
     };
   },
   components: {
-    AddBook
+    AddBook,
+    BookList
   },
   created() {
     api.getBooks()
@@ -50,5 +47,7 @@ export default {
 </script>
 
 <style>
-
+body {
+  background-color: lightblue;
+}
 </style>
