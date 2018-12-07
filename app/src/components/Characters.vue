@@ -5,8 +5,9 @@
         <ul v-if="characters">
             <li v-for="character in characters" 
             :key="character.id">
-            <p>{{character.name}}</p>
-            <span>{{character.age}} years old</span>
+                <RouterLink :to="`/characters/${character.id}`">
+                    {{character.name}}
+                </RouterLink>
             </li>
         </ul>
     </section>
@@ -27,7 +28,8 @@ export default {
     created() {
         api.getCharacters().then(characters => {
             this.characters = characters;
-        });
+        }).catch(err => 
+            console.log(err));
     },
     methods: {
         handleAdd(character) {

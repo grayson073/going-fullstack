@@ -1,42 +1,44 @@
 const express = require('express');
 const app = express();
-const shortid = require('shortid');
-const fs = require('fs');
+const morgan = require('morgan');
+const pg = require('pg');
 
-function readData() {
-  const data = fs.readFileSync('./data/characters.json', 'utf8');
-  return JSON.parse(data);
-}
-
-function saveData(characters) {
-  const json = JSON.stringify(characters, true, 2);
-  fs.writeFileSync('./data/characters.json', json);
-}
-
+app.use(morgan('dev'));
 app.use(express.json());
 
-app.get('/api/characters', (req, res) => {
-  const characters = readData();
-  if(req.query.name) {
-    const match = req.query.name.toLowerCase();
+const dbUrl = 'postgres://localhost:5432/characters';
+const Client = pg.Client;
+const client = new Client(dbUrl);
+client.connect();
 
-    const filtered = characters.filter(c => {
-      return c.name.toLowerCase().startsWith(match);
+app.get('/api/characters', (req, res) => {
+  client.query(`
+    SELECT name, id FROM characters;`)
+    .then(result => {
+      res.json(result.rows);
     });
-    res.json(filtered);
-  }
-  else {
-    res.json(characters);
-  }
+});
+
+app.get('/api/characters/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM characters WHERE id = $1;
+  `,
+  [req.params.id])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 app.post('/api/characters', (req, res) => {
-  const characters = readData();
-  const character = req.body;
-  character.id = shortid.generate();
-  characters.push(req.body);
-  saveData(characters);
-  res.json(character);
+  const body = req.body;
+  client.query(`
+    INSERT INTO characters (name, cool, dob)
+    VALUES ($1, $2, $3)
+    RETURNING *;`, 
+  [body.name, body.cool, body.dob])
+    .then(result => {
+      res.json(result.rows[0]);
+    });
 });
 
 // this should go at the bottom //

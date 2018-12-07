@@ -1,20 +1,30 @@
 [
   {
+    "id": "hp",
     "name": "Harry Potter",
-    "age": 38,
     "cool": true,
-    "id": "hp"
+    "dob": "7/31/1980"
   },
   {
+    "id": "hg",
     "name": "Hermione Granger",
-    "age": 38,
     "cool": true,
-    "id": "hg"
+    "dob": "9/19/1980"
   },
   {
+    "id": "rw",
     "name": "Ron Weasley",
-    "age": 39,
     "cool": false,
-    "id": "rw"
+    "dob": "3/1/1980"
+  },
+  {
+    "name": "Banana",
+    "cool": "true",
+    "dob": "2019-12-20"
+  },
+  {
+    "name": "Banana",
+    "cool": "false",
+    "dob": "1920-12-20"
   }
 ]
