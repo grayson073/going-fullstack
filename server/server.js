@@ -26,6 +26,7 @@ app.get('/api/animals', (req, res) => {
       animals.id, 
       animals.name as name, 
       animals.weight as weight,
+      animals.mammal as mammal,
       animals.image as image,
       size.id as "sizeId",
       size.name as size
@@ -41,7 +42,19 @@ app.get('/api/animals', (req, res) => {
 
 app.get('/api/animals/:id', (req, res) => {
   client.query(`
-    SELECT * FROM animals WHERE id = $1;
+  SELECT 
+    animals.id, 
+    animals.name as name, 
+    animals.weight as weight,
+    animals.mammal as mammal,
+    animals.image as image,
+    size.id as "sizeId",
+    size.name as size
+  FROM animals
+  JOIN size
+  ON animals.size_id = size.id
+  WHERE animals.id = $1;
+    
   `,
   [req.params.id])
     .then(result => {
