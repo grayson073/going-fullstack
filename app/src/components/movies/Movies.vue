@@ -3,19 +3,20 @@
         <h2>List of Great Movies</h2>
 
         <AddMovie :onAdd="handleAdd"/>
+        <MovieList :movies="movies"/>
 
-        <ul v-if="movies">
+        <!-- <ul v-if="movies">
             <li v-for="movie in movies" :key="movie.id">
                 {{movie.name}}
-                {{movie.year}}
             </li>
-        </ul>
+        </ul> -->
     </section>
 </template>
 
 <script>
 import api from '../services/api.js';
 import AddMovie from './AddMovie';
+import MovieList from './MovieList';
 
 export default {
   data() {
@@ -25,7 +26,8 @@ export default {
     };
   },
   components: {
-    AddMovie
+    AddMovie,
+    MovieList
   },
   created() {
     api.getMovies()

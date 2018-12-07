@@ -3,7 +3,10 @@ export default {
     return fetch('/api/movies')
       .then(response => response.json());
   },
-
+  getMovie(id) {
+    return fetch(`/api/movies/${id}`)
+      .then(response => response.json());
+  },
   addMovie(movie) {
     return fetch('/api/movies', {
       method: 'POST',
@@ -13,5 +16,5 @@ export default {
       body: JSON.stringify(movie)
     })
       .then(response => response.json());
-  }
+  },
 };
