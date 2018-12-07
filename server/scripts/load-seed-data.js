@@ -1,24 +1,31 @@
 const client = require('../db-client');
 const emojis = require('./emojis.json');
-const positives = require('./positives.js');
+const scales = require('./scales.js');
 
 Promise.all(
-  positives.map(pos => {
+  scales.map(scale => {
     return client.query(`
-      INSERT INTO positives (emotion, emo_level)
+      INSERT INTO scales (short_name, scale)
       VALUES ($1, $2);
     `,
-    [pos.emotion, pos.emo_level]);
+    [scale.shortName, scale.sc]);
   })
 )
   .then(() => {
     return Promise.all(
       emojis.map(emoji => {
         return client.query(`
-          INSERT INTO emojis (name, image, goodness, yob, positives_id)
-          VALUES ($1, $2, $3, $4, $5);
+          INSERT INTO emojis (name, image, goodness, yob, scales_id)
+          SELECT
+            $1 as name,
+            $2 as image,
+            $3 as goodness,
+            $4 as yob,
+            id as scales_id
+          FROM scales
+          WHERE short_name = $5
         `,
-        [emoji.name, emoji.image, emoji.goodness, emoji.yob, ]);
+        [emoji.name, emoji.image, emoji.goodness, emoji.yob, emoji.sc]);
       })
     );
   })

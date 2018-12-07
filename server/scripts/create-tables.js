@@ -1,10 +1,10 @@
 const client = require('../db-client');
 
 client.query(`
-  CREATE TABLE IF NOT EXISTS positives (
+  CREATE TABLE IF NOT EXISTS scales (
     id SERIAL PRIMARY KEY,
-    emotion VARCHAR(256) NOT NULL,
-    emo_level INTEGER NOT NULL
+    short_name VARCHAR(8) NOT NULL,
+    scale VARCHAR(256) NOT NULL
   );
 
   CREATE TABLE IF NOT EXISTS emojis (
@@ -13,7 +13,7 @@ client.query(`
     image VARCHAR(256),
     goodness BOOLEAN,
     yob INTEGER,
-    positives_id INTEGER NOT NULL REFERENCES positives(id)
+    scales_id INTEGER NOT NULL REFERENCES scales(id)
   );
 `)
   .then(
