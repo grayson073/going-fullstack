@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header>
+      <h1>Game-O-Rama</h1>
       <img src="../public/img/snes.png">
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -25,7 +26,13 @@ export default {};
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px 0px 0px 0px;
+  margin-left: calc(100vw - 100%);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
 nav {

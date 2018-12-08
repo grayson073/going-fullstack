@@ -1,7 +1,7 @@
 <template>
   <ul>
       <li>
-        <p>{{game.title}} ({{game.year}})</p>
+        <p><RouterLink :to="`/games/${game.id}`" :game="game">{{game.title}} ({{game.year}})</RouterLink></p>
         <p>Genre: {{game.genre}}</p>
         <img :src="game.imageUrl">
       </li>

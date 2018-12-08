@@ -1,6 +1,5 @@
 /<template>
   <section>
-    <p>Games Component</p>
     <GamesList :games="games"/>
   </section>
 </template>
