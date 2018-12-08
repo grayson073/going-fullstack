@@ -59,6 +59,29 @@ router
       .then(result => {
         res.json(result.rows[0]);
       });
+  })
+
+  .put('/:id', (req, res) => {
+    const body = req.body;
+    client.query(`
+      UPDATE game
+      SET
+        title = $1,
+        year = $2,
+        image_url = $3,
+        genre_id = $4
+      WHERE id = $5
+      RETURNING
+        id,
+        title,
+        year,
+        genre_id as "genreId",
+        image_url as "imageUrl";
+    `,
+    [body.title, body.year, body.imageUrl, body.genreId, body.id])
+      .then(result => {
+        res.json(result.rows[0]);
+      });
   });
 
 module.exports = router;
