@@ -41,6 +41,24 @@ router
       .then(result => {
         res.json(result.rows[0]);
       });
+  })
+
+  .post('/', (req, res) => {
+    const body = req.body;
+    client.query(`
+      INSERT INTO game (title, year, genre_id, image_url)
+      VALUES ($1, $2, $3, $4)
+      RETURNING
+        id,
+        title,
+        year,
+        genre_id as "genreId",
+        image_url as "imageUrl";
+    `,
+    [body.title, body.year, body.genreId, body.imageUrl])
+      .then(result => {
+        res.json(result.rows[0]);
+      });
   });
 
 module.exports = router;
