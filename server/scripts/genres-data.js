@@ -1,6 +1,6 @@
 module.exports = [
-  { genre: 'Action', shortName: 'act' },
-  { genre: 'Shooter', shortName: 'sh' },
-  { genre: 'Adventure', shortName: 'adv' },
-  { genre: 'Sports', shortName: 'sp' },
+  { category: 'Action', shortName: 'act' },
+  { category: 'Shooter', shortName: 'sh' },
+  { category: 'Adventure', shortName: 'adv' },
+  { category: 'Sports', shortName: 'sp' },
 ];
