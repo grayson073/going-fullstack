@@ -1,9 +1,13 @@
 /<template>
-  <p>Games Component</p>
+  <section>
+    <p>Games Component</p>
+    <GamesList :games="games"/>
+  </section>
 </template>
 
 <script>
 import gamesApi from '../../services/api';
+import GamesList from './GamesList';
 
 export default {
   data() {
@@ -11,7 +15,9 @@ export default {
       games: null
     };
   },
-
+  components: {
+    GamesList
+  },
   created() {
     gamesApi.getGames()
       .then(games => {

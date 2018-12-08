@@ -28,5 +28,11 @@
     "year": 2018,
     "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Red_Dead_Redemption_II.jpg/220px-Red_Dead_Redemption_II.jpg",
     "genre": "act"
+  },
+  {
+    "title": "Horizon Zero Dawn",
+    "year": 2017,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDM90lllJdMeluG_5xyn13IGTqaqS1_WtpM78S-fhNQgR_wJW",
+    "genre": "adv"
   }
 ]
