@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <Home/>
+    <header>
+      <img src="../public/img/snes.png">
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+      </nav>
+    </header>
+
+    <main>
+      <RouterView></RouterView>
+    </main>
   </div>
 </template>
 
 <script>
-
-import Home from './components/Home';
-export default {
-  name: 'app',
-  components: {
-    Home,
-  }
-};
+export default {};
 </script>
 
 <style>
@@ -23,5 +25,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+  width: 300px;
+  margin-bottom: 30px;
 }
 </style>

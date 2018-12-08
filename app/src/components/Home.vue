@@ -1,12 +1,9 @@
 <template>
-  <h1>Hello Going-Fullstack!</h1>
+  <section>
+    <h1>Hello Going-Fullstack!</h1>
+    <RouterLink to="/games">View Games</RouterLink>
+  </section>
 </template>
-
-<script>
-export default {
-
-};
-</script>
 
 <style>
 
