@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Breath of the Wild",
+    "year": 2017,
+    "imageUrl": "https://www.gamestop.com/common/images/lbox/141686b.jpg",
+    "genre": "adv"
+  },
+  {
+    "title": "Grand Theft Auto V",
+    "year": 2014,
+    "imageUrl": "https://cdn.alzashop.com/ImgW.ashx?fd=f3&cd=WG131f",
+    "genre": "act"
+  },
+  {
+    "title": "Call of Duty 4 Modern Warfare",
+    "year": 2007,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrFnLCZ9wjVT37STgkSJ7jg0Dnhbyk8GBoKwYkpYlVTUV2PXk3",
+    "genre": "sh"
+  },
+  {
+    "title": "Fifa 2018",
+    "year": 2018,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/FIFA18cover.png/220px-FIFA18cover.png",
+    "genre": "sp"
+  },
+  {
+    "title": "Red Dead Redemption 2",
+    "year": 2018,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Red_Dead_Redemption_II.jpg/220px-Red_Dead_Redemption_II.jpg",
+    "genre": "act"
+  }
+]
