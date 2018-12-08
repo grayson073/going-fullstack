@@ -1,7 +1,7 @@
 <template>
   <section>
-    <h1>Hello Going-Fullstack!</h1>
-    <RouterLink to="/games">View Games</RouterLink>
+    <h1>Game-O-Rama</h1>
+    <p>Check out some of the awesome games by clicking "Games" above!</p>
   </section>
 </template>
 

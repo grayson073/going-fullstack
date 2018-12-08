@@ -4,6 +4,7 @@
       <img src="../public/img/snes.png">
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/games">Games</RouterLink>
       </nav>
     </header>
 
@@ -25,6 +26,12 @@ export default {};
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
 }
 
 img {

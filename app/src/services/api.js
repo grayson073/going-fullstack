@@ -21,7 +21,7 @@ export default {
   },
 
   addGame(game) {
-    return fetch(`/api/games`, getOptions('POST', game))
+    return fetch('/api/games', getOptions('POST', game))
       .then(response => response.json());
   },
 
