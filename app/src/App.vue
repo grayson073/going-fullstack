@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <header>
-      <h1>Game-O-Rama</h1>
-      <img src="../public/img/snes.png">
+      <h1>Game Library</h1>
+      <img src="../public/img/nintendo_header.png">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/games">Games</RouterLink>
@@ -28,10 +28,15 @@ export default {};
   color: #2c3e50;
   margin-top: 60px 0px 0px 0px;
   margin-left: calc(100vw - 100%);
-  
-  a:visited {
-    color: black;
-  }
+}
+a:visited, a {
+  color: black;
+}
+
+img {
+  margin-bottom: 30px;
+  width: 90vw;
+  height: auto;
 }
 
 body {
@@ -45,8 +50,4 @@ nav {
   justify-content: space-around;
 }
 
-img {
-  width: 300px;
-  margin-bottom: 30px;
-}
 </style>

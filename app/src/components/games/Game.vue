@@ -22,11 +22,14 @@ export default {
   }
   li {
     list-style: none;
-    background-color: rgb(236, 175, 175);
+    background-color: rgb(211, 234, 240);
     width: 250px;
     height: 250px;
-    padding: 15px;
-    margin: 25px;
+    padding: 10px 0px 20px 0px;
+  }
+
+  li:hover {
+    background-color: rgb(141, 222, 240);
   }
   img {
     width: 100px;

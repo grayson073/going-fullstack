@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+  img {
+    width: 300px;
+  }
   .item-a {
     grid-area: header;
   }

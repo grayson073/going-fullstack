@@ -31,5 +31,6 @@ export default {
   .game-tiles {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
   }
 </style>
