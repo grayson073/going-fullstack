@@ -1,6 +1,5 @@
 <template>
   <section v-if="games">
-    <AddGame/>
     <div class="game-tiles">
       <Game v-for="game in games"
         :game="game"
@@ -10,16 +9,20 @@
 </template>
 
 <script>
-import AddGame from './AddGame';
 import Game from './Game';
 
 export default {
   props: {
-    games: Array
+    games: Array,
+    onAdd: Function
   },
   components: {
-    AddGame,
     Game,
+  },
+  methods: {
+    handleAdd(game) {
+      this.onAdd(game);
+    }
   }
 };
 </script>
