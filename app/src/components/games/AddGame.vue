@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     handleAdd(game) {
-      console.log('THE GAME', game);
       this.onAdd(game);
       this.show = false;
     }

@@ -11,6 +11,15 @@
 export default {
   props: {
     onClose: Function
+  },
+  created() {
+    this.documentListener = event => {
+      if(event.keyCode === 27) {
+        this.onClose();
+      }
+    };
+
+    document.addEventListener('keyup', this.documentListener);
   }
 };
 </script>
@@ -33,6 +42,7 @@ export default {
 
   .close {
     position: absolute;
-    top: 5px; right: 5px;
+    margin: 0px;
+    top: 10px; right: 5px;
   }
 </style>
