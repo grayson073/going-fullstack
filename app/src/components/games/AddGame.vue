@@ -2,7 +2,7 @@
   <section>
     <button @click="show = true">Add a new game</button>
     <Modal v-if="show" :onClose="() => show = false">
-      <GameForm :onSubmit="handleAdd"/>
+      <GameForm :onSubmit="handleAdd" action="add"/>
     </Modal>
   </section>
 </template>
@@ -26,8 +26,9 @@ export default {
   },
   methods: {
     handleAdd(game) {
-      return this.onAdd(game)
-        .then(() => this.show = false);
+      console.log('THE GAME', game);
+      this.onAdd(game);
+      this.show = false;
     }
   }
 };

@@ -22,7 +22,7 @@ export default {
   }
   li {
     list-style: none;
-    background-color: rgb(227, 207, 245);
+    background-color: rgb(236, 175, 175);
     width: 250px;
     height: 250px;
     padding: 15px;

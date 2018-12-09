@@ -19,7 +19,7 @@
 export default {};
 </script>
 
-<style>
+<style lang="postcss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +28,10 @@ export default {};
   color: #2c3e50;
   margin-top: 60px 0px 0px 0px;
   margin-left: calc(100vw - 100%);
+  
+  a:visited {
+    color: black;
+  }
 }
 
 body {

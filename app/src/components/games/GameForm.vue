@@ -1,26 +1,33 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
+    <p v-if="action === 'add'">Add a game:</p>
+    <p v-if="action === 'update'">Update a game:</p>
     <label>
       Title:
-      <input v-model="game.title" type="text">
+      <input v-model="game.title" placeholder="Title" type="text">
     </label>
     <label>
       Year:
-      <input v-model.number="game.year" type="number">
+      <input v-model.number="game.year" placeholder="Year" type="number">
     </label>
     <label>
       Image:
-      <input v-model="game.imageUrl" type="text">
+      <input v-model="game.imageUrl" placeholder="Image" type="text">
     </label>
     <label>
       Genre:
       <select v-model.number="game.genreId">
-        <option value="sh">Action</option>
-        <option value="sh">Adventure</option>
-        <option value="sh">Shooter</option>
-        <option value="sh">Sports</option>
+        <option disabled selected value="">Select a genre</option>
+        <option value="1">Action</option>
+        <option value="3">Adventure</option>
+        <option value="2">SHooter</option>
+        <option value="4">Sports</option>
       </select>
+      <label>
+      <button>Add</button>
+      </label>
     </label>
+
   </form>
 </template>
 
@@ -30,12 +37,21 @@ export default {
     return {
       game: {
         title: '',
-        year: 1970,
+        year: null,
         imageUrl: '',
-        genreId: 0,
+        genreId: ''
       }
     };
   },
+  props: {
+    action: String,
+    onSubmit: Function
+  },
+  methods: {
+    handleSubmit() {
+      this.onSubmit(this.game);
+    }
+  }
 };
 </script>
 
@@ -46,10 +62,14 @@ export default {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
 
   }
     input, select {
       margin: 10px;
+      width: 135px;
+    }
+
+    button {
+      margin-top: 30px;
     }
 </style>

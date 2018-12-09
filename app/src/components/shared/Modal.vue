@@ -18,19 +18,17 @@ export default {
 <style scoped>
   .modal {
     position: fixed;
-    top: 0; left: 0;
-    height: 100%;
-    width: 100%;
+    top: 100px; right: 50%; left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(193, 69, 69);
   }
 
   .content {
     position: relative;
     padding: 50px;
-    background-color: aliceblue;
+    background-color: rgb(208, 82, 68);
+    color: white;
   }
 
   .close {
